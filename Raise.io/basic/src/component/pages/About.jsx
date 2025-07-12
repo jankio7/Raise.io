@@ -1,131 +1,10 @@
-  function Home(){
+import { Link } from "react-router-dom";
+
+function About(){
       return(
           <>
-    <header className="site-header">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 col-12 d-flex flex-wrap">
-            <p className="d-flex me-4 mb-0">
-              <i className="bi-geo-alt me-2" />
-              Akershusstranda 20, 0150 Oslo, Norway
-            </p>
-            <p className="d-flex mb-0">
-              <i className="bi-envelope me-2" />
-              <a href="mailto:info@company.com">info@company.com</a>
-            </p>
-          </div>
-          <div className="col-lg-3 col-12 ms-auto d-lg-block d-none">
-            <ul className="social-icon">
-              <li className="social-icon-item">
-                <a href="#" className="social-icon-link bi-twitter" />
-              </li>
-              <li className="social-icon-item">
-                <a href="#" className="social-icon-link bi-facebook" />
-              </li>
-              <li className="social-icon-item">
-                <a href="#" className="social-icon-link bi-instagram" />
-              </li>
-              <li className="social-icon-item">
-                <a href="#" className="social-icon-link bi-youtube" />
-              </li>
-              <li className="social-icon-item">
-                <a href="#" className="social-icon-link bi-whatsapp" />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
-    <nav className="navbar navbar-expand-lg bg-light shadow-lg">
-      <div className="container">
-        <a className="navbar-brand" href="index.html">
-          <img
-            src="/assets/images/logo.png"
-            className="logo img-fluid"
-            alt="Kind Heart Charity"
-          />
-          <span>
-            Kind Heart Charity
-            <small>Non-profit Organization</small>
-          </span>
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link click-scroll" href="#top">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link click-scroll" href="#section_2">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link click-scroll" href="#section_3">
-                Causes
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link click-scroll" href="#section_4">
-                Volunteer
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link click-scroll dropdown-toggle"
-                href="#section_5"
-                id="navbarLightDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                News
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-light"
-                aria-labelledby="navbarLightDropdownMenuLink"
-              >
-                <li>
-                  <a className="dropdown-item" href="news.html">
-                    News Listing
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="news-detail.html">
-                    News Detail
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link click-scroll" href="#section_6">
-                Contact
-              </a>
-            </li>
-            <li className="nav-item ms-3">
-              <a
-                className="nav-link custom-btn custom-border-btn btn"
-                href="donate.html"
-              >
-                Donate
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        
+ 
     <main>
       <section className="hero-section hero-section-full-height">
         <div className="container-fluid">
@@ -265,81 +144,7 @@
           </div>
         </div>
       </section>
-      <section className="section-padding section-bg" id="section_2">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-12 mb-5 mb-lg-0">
-              <img
-                src="/assets/images/group-people-volunteering-foodbank-poor-people.jpg"
-                className="custom-text-box-image img-fluid"
-                alt=""
-              />
-            </div>
-            <div className="col-lg-6 col-12">
-              <div className="custom-text-box">
-                <h2 className="mb-2">Our Story</h2>
-                <h5 className="mb-3">
-                  Kind Heart Charity, Non-Profit Organization
-                </h5>
-                <p className="mb-0">
-                  This is a Bootstrap 5.2.2 CSS template for charity organization
-                  websites. You can feel free to use it. Please tell your friends
-                  about TemplateMo website. Thank you.
-                </p>
-              </div>
-              <div className="row">
-                <div className="col-lg-6 col-md-6 col-12">
-                  <div className="custom-text-box mb-lg-0">
-                    <h5 className="mb-3">Our Mission</h5>
-                    <p>
-                      Sed leo nisl, posuere at molestie ac, suscipit auctor quis
-                      metus
-                    </p>
-                    <ul className="custom-list mt-2">
-                      <li className="custom-list-item d-flex">
-                        <i className="bi-check custom-text-box-icon me-2" />
-                        Charity Theme
-                      </li>
-                      <li className="custom-list-item d-flex">
-                        <i className="bi-check custom-text-box-icon me-2" />
-                        Semantic HTML
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-6 col-12">
-                  <div className="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
-                    <div className="counter-thumb">
-                      <div className="d-flex">
-                        <span
-                          className="counter-number"
-                          data-from={1}
-                          data-to={2009}
-                          data-speed={1000}
-                        />
-                        <span className="counter-number-text" />
-                      </div>
-                      <span className="counter-text">Founded</span>
-                    </div>
-                    <div className="counter-thumb mt-4">
-                      <div className="d-flex">
-                        <span
-                          className="counter-number"
-                          data-from={1}
-                          data-to={120}
-                          data-speed={1000}
-                        />
-                        <span className="counter-number-text">B</span>
-                      </div>
-                      <span className="counter-text">Donations</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
       <section className="about-section section-padding">
         <div className="container">
           <div className="row">
@@ -1203,7 +1008,7 @@
     </footer>
 
 
-          </>
-      )
-  }
-  export default Home
+        </>
+    )
+}
+  export default About

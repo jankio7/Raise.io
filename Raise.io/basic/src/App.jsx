@@ -3,19 +3,39 @@ import About from "./component/pages/About";
 import Donate from "./component/pages/Donate";
 import News from "./component/pages/News";
 import Newsdetail from "./component/pages/Newsdetail";
-import Home from "./component/pages/About";
+import Layout from "./component/layout/Layout";
+import Error from "./component/pages/Error";
+import Login from "./component/auth/Login";
+import About2 from "./component/pages/About2";
+import Causes from "./component/pages/Causes";
+import Volunter from "./component/pages/Volunter";
+import News1 from "./component/pages/news1";
+import Contact from "./component/pages/Contact";
+
+
 
 
 
 function App() {
   return(
       <>
-        <Routes>
-           <Route path="/" element={<Home />} />
-           <Route path="/donate" element={<Donate />} />
-           <Route path="/news" element={<News />} />
-           <Route path="/newsdetail" element={<Newsdetail />} />
-       </Routes>
+      
+            <Routes>
+              <Route path="" element={<Layout/>}>
+              <Route path="/" element={<About/>}/>
+              <Route path="/about" element={<About2 />}/>
+              <Route path="/causes" element={<Causes/>}/>
+              <Route path="/volunter" element={<Volunter/>}/>
+              <Route path="/news" element={<News1/>}/>
+              <Route path="/contact" element={<Contact/>}/>
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/newsdetail" element={<Newsdetail />} />
+              <Route path="/login" element={<Login/>}/>
+              </Route>
+              <Route path="/" element={<Error/>}/>
+          </Routes>
+        
     </>
   )
 }
