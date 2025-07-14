@@ -3,60 +3,42 @@ import { Link } from "react-router-dom";
 export default function Navbar(){
     return(
         <>
-           <div className="wrap">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 d-flex align-items-center">
-          <p className="mb-0 phone pl-md-2">
-            <Link to="#" className="mr-2">
-              <span className="fa fa-phone mr-1" /> +00 1234 567
-            </Link>
-            <Link to="#">
-              <span className="fa fa-paper-plane mr-1" /> o7servicesgmail.com
-            </Link>
-          </p>
-        </div>
-        <div className="col-md-6 d-flex justify-content-md-end">
-          <div className="social-media">
-            <p className="mb-0 d-flex">
-              <Link
-                to="#"
-                className="d-flex align-items-center justify-content-center"
-              >
-                <span className="fa fa-facebook">
-                  <i className="sr-only">Facebook</i>
-                </span>
-              </Link>
-              <Link
-                to="#"
-                className="d-flex align-items-center justify-content-center"
-              >
-                <span className="fa fa-twitter">
-                  <i className="sr-only">Twitter</i>
-                </span>
-              </Link>
-              <Link
-                to="#"
-                className="d-flex align-items-center justify-content-center"
-              >
-                <span className="fa fa-instagram">
-                  <i className="sr-only">Instagram</i>
-                </span>
-              </Link>
-              <Link
-                to="#"
-                className="d-flex align-items-center justify-content-center"
-              >
-                <span className="fa fa-dribbble">
-                  <i className="sr-only">Dribbble</i>
-                </span>
-              </Link>
-            </p>
-          </div>
-        </div>
+         <header className="site-header">
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-8 col-12 d-flex flex-wrap">
+        <p className="d-flex me-4 mb-0">
+          <i className="bi-geo-alt me-2" />
+          Ghurial,jalandhar (India)
+        </p>
+        <p className="d-flex mb-0">
+          <i className="bi-envelope me-2" />
+          <a href="mailto:info@company.com">info@company.com</a>
+        </p>
+      </div>
+      <div className="col-lg-3 col-12 ms-auto d-lg-block d-none">
+        <ul className="social-icon">
+          <li className="social-icon-item">
+            <a href="#" className="social-icon-link bi-twitter" />
+          </li>
+          <li className="social-icon-item">
+            <a href="#" className="social-icon-link bi-facebook" />
+          </li>
+          <li className="social-icon-item">
+            <a href="#" className="social-icon-link bi-instagram" />
+          </li>
+          <li className="social-icon-item">
+            <a href="#" className="social-icon-link bi-youtube" />
+          </li>
+          <li className="social-icon-item">
+            <a href="#" className="social-icon-link bi-whatsapp" />
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+</header>
+
   <nav
     className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light"
     id="ftco-navbar"
@@ -100,12 +82,36 @@ export default function Navbar(){
             <Link to={"/volunter"} className="nav-link">
               Volunter
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/News"} className="nav-link">
+                    </li>
+                    <li className="nav-item dropdown">
+            <Link
+              className="nav-link click-scroll dropdown-toggle"
+              to="news"
+              id="navbarLightDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               News
             </Link>
+            <ul
+              className="dropdown-menu dropdown-menu-light"
+              aria-labelledby="navbarLightDropdownMenuLink"
+            >
+              <li>
+                <Link className="dropdown-item" to="/news1">
+                  News Listing
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/detail1">
+                  News Detail
+                </Link>
+              </li>
+            </ul>
           </li>
+
+          
           <li className="nav-item">
             <Link to={"/contact"} className="nav-link">
               Contact
@@ -121,6 +127,12 @@ export default function Navbar(){
               Login
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to={"/register"} className="nav-link">
+              Register
+            </Link>
+          </li>
+          
         </ul>
       </div>
     </div>

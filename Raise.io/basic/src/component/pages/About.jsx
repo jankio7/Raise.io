@@ -810,19 +810,19 @@ function About(){
       <section className="contact-section section-padding" id="section_6">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+            <div className="col-lg-4 col-12 mx-auto mb-5 mb-lg-0 ">
               <div className="contact-info-wrap">
-                <h2>Get in touch</h2>
+                <h2>Raise.io</h2>
                 <div className="contact-image-wrap d-flex flex-wrap">
                   <img
-                    src="/assets/images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg"
+                    src="/assets/images/slide/boy.jpg"
                     className="img-fluid avatar-image"
                     alt=""
                   />
                   <div className="d-flex flex-column justify-content-center ms-3">
-                    <p className="mb-0">Clara Barton</p>
+                    <p className="mb-0">Ravinder Kumar</p>
                     <p className="mb-0">
-                      <strong>HR &amp; Office Manager</strong>
+                      <strong>Founder</strong>
                     </p>
                   </div>
                 </div>
@@ -830,11 +830,11 @@ function About(){
                   <h5 className="mb-3">Contact Infomation</h5>
                   <p className="d-flex mb-2">
                     <i className="bi-geo-alt me-2" />
-                    Akershusstranda 20, 0150 Oslo, Norway
+                    Ghurial,Jalandhar (india)
                   </p>
                   <p className="d-flex mb-2">
                     <i className="bi-telephone me-2" />
-                    <a href="tel: 305-240-9671">305-240-9671</a>
+                    <a href="tel: 305-240-9671">7901795389</a>
                   </p>
                   <p className="d-flex">
                     <i className="bi-envelope me-2" />
@@ -865,7 +865,7 @@ function About(){
                       name="first-name"
                       id="first-name"
                       className="form-control"
-                      placeholder="Jack"
+                      placeholder="First Name"
                       required=""
                     />
                   </div>
@@ -875,7 +875,7 @@ function About(){
                       name="last-name"
                       id="last-name"
                       className="form-control"
-                      placeholder="Doe"
+                      placeholder="Last Name"
                       required=""
                     />
                   </div>
@@ -886,7 +886,16 @@ function About(){
                   id="email"
                   pattern="[^ @]*@[^ @]*"
                   className="form-control"
-                  placeholder="Jackdoe@gmail.com"
+                  placeholder="Email"
+                  required=""
+                />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  pattern="[^ @]*@[^ @]*"
+                  className="form-control"
+                  placeholder="Contact Number"
                   required=""
                 />
                 <textarea
@@ -894,7 +903,7 @@ function About(){
                   rows={5}
                   className="form-control"
                   id="message"
-                  placeholder="What can we help you?"
+                  placeholder="Your Message"
                   defaultValue={""}
                 />
                 <button type="submit" className="form-control">
