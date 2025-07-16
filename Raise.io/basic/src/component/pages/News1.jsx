@@ -28,24 +28,7 @@ export default function News1(){
                 </div>
                 <div className="news-block-info">
                   <div className="d-flex mt-2">
-                    <div className="news-block-date">
-                      <p>
-                        <i className="bi-calendar4 custom-icon me-1" />
-                        October 12, 2036
-                      </p>
-                    </div>
-                    <div className="news-block-author mx-5">
-                      <p>
-                        <i className="bi-person custom-icon me-1" />
-                        By Admin
-                      </p>
-                    </div>
-                    <div className="news-block-comment">
-                      <p>
-                        <i className="bi-chat-left custom-icon me-1" />
-                        32 Comments
-                      </p>
-                    </div>
+                   
                   </div>
                   <div className="news-block-title mb-2">
                     <h4>
@@ -59,9 +42,8 @@ export default function News1(){
                   </div>
                   <div className="news-block-body">
                     <p>
-                      Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                      omeg kohm tokito Professional charity theme based on
-                      Bootstrap
+                     The fundraiser project promotes clothing donation drives in urban areas to collect and 
+                      distribute garments to homeless and low-income families, supporting dignity and basic needs.
                     </p>
                   </div>
                 </div>
@@ -89,24 +71,7 @@ export default function News1(){
                 </div>
                 <div className="news-block-info">
                   <div className="d-flex mt-2">
-                    <div className="news-block-date">
-                      <p>
-                        <i className="bi-calendar4 custom-icon me-1" />
-                        October 20, 2036
-                      </p>
-                    </div>
-                    <div className="news-block-author mx-5">
-                      <p>
-                        <i className="bi-person custom-icon me-1" />
-                        By Admin
-                      </p>
-                    </div>
-                    <div className="news-block-comment">
-                      <p>
-                        <i className="bi-chat-left custom-icon me-1" />
-                        35 Comments
-                      </p>
-                    </div>
+                    
                   </div>
                   <div className="news-block-title mb-2">
                     <h4>
@@ -120,9 +85,7 @@ export default function News1(){
                   </div>
                   <div className="news-block-body">
                     <p>
-                      Sed leo nisl, posuere at molestie ac, suscipit auctor
-                      mauris. Etiam quis metus elementum, tempor risus vel,
-                      condimentum orci
+                       The fundraiser project includes food donation drives in targeted areas to provide meals and essential groceries to underprivileged families, helping to reduce hunger and improve nutrition.
                     </p>
                   </div>
                 </div>
@@ -168,10 +131,7 @@ export default function News1(){
                     </h6>
                   </div>
                   <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 16, 2036
-                    </p>
+                   
                   </div>
                 </div>
               </div>
@@ -197,10 +157,7 @@ export default function News1(){
                     </h6>
                   </div>
                   <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 24, 2036
-                    </p>
+                    
                   </div>
                 </div>
               </div>
@@ -291,8 +248,8 @@ export default function News1(){
                   <div className="carousel-item active">
                     <div className="carousel-caption">
                       <h4 className="carousel-title">
-                        Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                        omeg kohm tokito charity theme
+                        support that improved their living conditions, education, and well-being. Their satisfaction reflects the project's meaningful impact and success.
+                        
                       </h4>
                       <small className="carousel-name">
                         <span className="carousel-name-title">Maria</span>, Boss

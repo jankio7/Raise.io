@@ -60,20 +60,13 @@ function Newsdetail() {
                 </div>
                 <div className="news-block-body">
                   <p>
-                    <strong>Lorem Ipsum</strong> dolor sit amet, consectetur
-                    adipsicing kengan omeg kohm tokito Professional charity
-                    theme based on Bootstrap
+                   The <strong>Fundraiser</strong>  organizes clothing donation drives in urban areas to collect gently used garments from individuals and organizations. These clothes are sorted and distributed to homeless individuals, low-income families, and those in crisis.
                   </p>
                   <p>
-                    <strong>Sed leo</strong> nisl, This is a Bootstrap 5.2.2 CSS
-                    template for charity organization websites. You can feel
-                    free to use it. Please tell your friends about TemplateMo
-                    website. Thank you.
+                    By addressing the basic need for proper clothing, the initiative promotes dignity and comfort for the underserved. It also encourages community participation and reduces textile waste through responsible reuse.Thank You
                   </p>
                   <blockquote>
-                    Sed leo nisl, posuere at molestie ac, suscipit auctor
-                    mauris. Etiam quis metus elementum, tempor risus vel,
-                    condimentum orci.
+                  The recent fundraiser , organized by Kind Heart Charity, successfully concluded with overwhelming community support. The initiative focused on providing essential resources such as food, clothing, and educational materials to underprivileged families in urban areas.
                   </blockquote>
                 </div>
                 <div className="row mt-5 mb-4">
@@ -252,10 +245,7 @@ function Newsdetail() {
                   </h6>
                 </div>
                 <div className="news-block-date">
-                  <p>
-                    <i className="bi-calendar4 custom-icon me-1" />
-                    October 16, 2036
-                  </p>
+                 
                 </div>
               </div>
             </div>
@@ -280,12 +270,7 @@ function Newsdetail() {
                     </a>
                   </h6>
                 </div>
-                <div className="news-block-date">
-                  <p>
-                    <i className="bi-calendar4 custom-icon me-1" />
-                    October 20, 2036
-                  </p>
-                </div>
+               
               </div>
             </div>
             <div className="category-block d-flex flex-column">
@@ -388,24 +373,7 @@ function Newsdetail() {
               </div>
               <div className="news-block-info">
                 <div className="d-flex mt-2">
-                  <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 16, 2036
-                    </p>
-                  </div>
-                  <div className="news-block-author mx-5">
-                    <p>
-                      <i className="bi-person custom-icon me-1" />
-                      By Admin
-                    </p>
-                  </div>
-                  <div className="news-block-comment">
-                    <p>
-                      <i className="bi-chat-left custom-icon me-1" />
-                      24 Comments
-                    </p>
-                  </div>
+                  
                 </div>
                 <div className="news-block-title mb-2">
                   <h4>
@@ -419,9 +387,7 @@ function Newsdetail() {
                 </div>
                 <div className="news-block-body">
                   <p>
-                    Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                    omeg kohm tokito Professional charity theme based on
-                    Bootstrap
+                   The fundraiser project organizes clothing donation drives in urban areas to collect gently used garments from individuals and organizations. These clothes are sorted and distributed to homeless individuals, low-income families, and those in crisis.
                   </p>
                 </div>
               </div>
@@ -451,24 +417,7 @@ function Newsdetail() {
               </div>
               <div className="news-block-info">
                 <div className="d-flex mt-2">
-                  <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 20, 2036
-                    </p>
-                  </div>
-                  <div className="news-block-author mx-5">
-                    <p>
-                      <i className="bi-person custom-icon me-1" />
-                      By Admin
-                    </p>
-                  </div>
-                  <div className="news-block-comment">
-                    <p>
-                      <i className="bi-chat-left custom-icon me-1" />
-                      36 Comments
-                    </p>
-                  </div>
+                 
                 </div>
                 <div className="news-block-title mb-2">
                   <h4>
@@ -482,9 +431,7 @@ function Newsdetail() {
                 </div>
                 <div className="news-block-body">
                   <p>
-                    Sed leo nisl, posuere at molestie ac, suscipit auctor
-                    mauris. Etiam quis metus elementum, tempor risus vel,
-                    condimentum orci
+                  By addressing the basic need for proper clothing, the initiative promotes dignity and comfort for the underserved. It also encourages community participation and reduces textile waste through responsible reuse.
                   </p>
                 </div>
               </div>

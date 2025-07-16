@@ -19,7 +19,7 @@ export default function Volunter(){
                       name="volunteer-name"
                       id="volunteer-name"
                       className="form-control"
-                      placeholder="Jack Doe"
+                      placeholder="Full Name"
                       required=""
                     />
                   </div>
@@ -30,7 +30,7 @@ export default function Volunter(){
                       id="volunteer-email"
                       pattern="[^ @]*@[^ @]*"
                       className="form-control"
-                      placeholder="Jackdoe@gmail.com"
+                      placeholder="Email"
                       required=""
                     />
                   </div>
@@ -83,8 +83,7 @@ export default function Volunter(){
               <div className="custom-block-body text-center">
                 <h4 className="text-white mt-lg-3 mb-lg-3">About Volunteering</h4>
                 <p className="text-white">
-                  Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg
-                  kohm tokito Professional charity theme based
+                 Volunteers support the fundraiser project by assisting in planning, promotion, and community engagement to ensure its success.
                 </p>
               </div>
             </div>

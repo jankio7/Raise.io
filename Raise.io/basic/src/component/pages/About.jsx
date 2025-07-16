@@ -24,7 +24,7 @@ function About(){
                     />
                     <div className="carousel-caption d-flex flex-column justify-content-end">
                       <h1>be a Kind Heart</h1>
-                      <p>Professional charity theme based on Bootstrap 5.2.2</p>
+                      <p className="mx-end">Donate Charity </p>
                     </div>
                   </div>
                   <div className="carousel-item">
@@ -150,14 +150,14 @@ function About(){
           <div className="row">
             <div className="col-lg-6 col-md-5 col-12">
               <img
-                src="/assets/images/portrait-volunteer-who-organized-donations-charity.jpg"
+                src="/assets/images/boy.jpg"
                 className="about-image ms-lg-auto bg-light shadow-lg img-fluid"
                 alt=""
               />
             </div>
             <div className="col-lg-5 col-md-7 col-12">
               <div className="custom-text-block">
-                <h2 className="mb-0">Sandy Chan</h2>
+                <h2 className="mb-0">Arshpreet Signh</h2>
                 <p className="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
                 <p>
                   Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg
@@ -219,28 +219,10 @@ function About(){
                   <div className="custom-block-body">
                     <h5 className="mb-3">Children Education</h5>
                     <p>
-                      Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                      omeg kohm tokito
+                      The fundraiser project focuses on supporting children's education by providing essential resources like books, uniforms, and tuition aid. It aims to ensure underprivileged children have access to quality learning opportunities.
                     </p>
-                    <div className="progress mt-4">
-                      <div
-                        className="progress-bar w-75"
-                        role="progressbar"
-                        aria-valuenow={75}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex align-items-center my-2">
-                      <p className="mb-0">
-                        <strong>Raised:</strong>
-                        $18,500
-                      </p>
-                      <p className="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $32,000
-                      </p>
-                    </div>
+                    
+                   
                   </div>
                   <a href="donate.html" className="custom-btn btn">
                     Donate now
@@ -259,28 +241,9 @@ function About(){
                   <div className="custom-block-body">
                     <h5 className="mb-3">Poverty Development</h5>
                     <p>
-                      Sed leo nisl, posuere at molestie ac, suscipit auctor
-                      mauris. Etiam quis metus tempor
+                     The fundraiser project aims to support poverty alleviation by funding skill development, basic necessities, and livelihood programs. It seeks to empower underprivileged communities towards sustainable economic growth.
                     </p>
-                    <div className="progress mt-4">
-                      <div
-                        className="progress-bar w-50"
-                        role="progressbar"
-                        aria-valuenow={50}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex align-items-center my-2">
-                      <p className="mb-0">
-                        <strong>Raised:</strong>
-                        $27,600
-                      </p>
-                      <p className="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $60,000
-                      </p>
-                    </div>
+                    
                   </div>
                   <a href="donate.html" className="custom-btn btn">
                     Donate now
@@ -299,28 +262,10 @@ function About(){
                   <div className="custom-block-body">
                     <h5 className="mb-3">Supply drinking water</h5>
                     <p>
-                      Orci varius natoque penatibus et magnis dis parturient
-                      montes, nascetur ridiculus
+                      The fundraiser project aims to provide clean and safe drinking water to communities in need by setting up water filters, tanks, or borewells. It focuses on improving health and hygiene through sustainable water solutions.
+
                     </p>
-                    <div className="progress mt-4">
-                      <div
-                        className="progress-bar w-100"
-                        role="progressbar"
-                        aria-valuenow={100}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex align-items-center my-2">
-                      <p className="mb-0">
-                        <strong>Raised:</strong>
-                        $84,600
-                      </p>
-                      <p className="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $100,000
-                      </p>
-                    </div>
+                    
                   </div>
                   <a href="donate.html" className="custom-btn btn">
                     Donate now
@@ -350,7 +295,7 @@ function About(){
                       name="volunteer-name"
                       id="volunteer-name"
                       className="form-control"
-                      placeholder="Jack Doe"
+                      placeholder="Full Name"
                       required=""
                     />
                   </div>
@@ -361,7 +306,7 @@ function About(){
                       id="volunteer-email"
                       pattern="[^ @]*@[^ @]*"
                       className="form-control"
-                      placeholder="Jackdoe@gmail.com"
+                      placeholder="Email"
                       required=""
                     />
                   </div>
@@ -414,8 +359,7 @@ function About(){
               <div className="custom-block-body text-center">
                 <h4 className="text-white mt-lg-3 mb-lg-3">About Volunteering</h4>
                 <p className="text-white">
-                  Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg
-                  kohm tokito Professional charity theme based
+                 Volunteers support the fundraiser project by assisting in planning, promotion, and community engagement to ensure its success.
                 </p>
               </div>
             </div>
@@ -450,22 +394,16 @@ function About(){
                 <div className="news-block-info">
                   <div className="d-flex mt-2">
                     <div className="news-block-date">
-                      <p>
-                        <i className="bi-calendar4 custom-icon me-1" />
-                        October 12, 2036
-                      </p>
+                      
+                      
                     </div>
                     <div className="news-block-author mx-5">
-                      <p>
-                        <i className="bi-person custom-icon me-1" />
-                        By Admin
-                      </p>
+                      
+                      
                     </div>
                     <div className="news-block-comment">
-                      <p>
-                        <i className="bi-chat-left custom-icon me-1" />
-                        32 Comments
-                      </p>
+                      
+                        
                     </div>
                   </div>
                   <div className="news-block-title mb-2">
@@ -480,9 +418,8 @@ function About(){
                   </div>
                   <div className="news-block-body">
                     <p>
-                      Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                      omeg kohm tokito Professional charity theme based on
-                      Bootstrap
+                      The fundraiser project promotes clothing donation drives in urban areas to collect and 
+                      distribute garments to homeless and low-income families, supporting dignity and basic needs.
                     </p>
                   </div>
                 </div>
@@ -510,24 +447,7 @@ function About(){
                 </div>
                 <div className="news-block-info">
                   <div className="d-flex mt-2">
-                    <div className="news-block-date">
-                      <p>
-                        <i className="bi-calendar4 custom-icon me-1" />
-                        October 20, 2036
-                      </p>
-                    </div>
-                    <div className="news-block-author mx-5">
-                      <p>
-                        <i className="bi-person custom-icon me-1" />
-                        By Admin
-                      </p>
-                    </div>
-                    <div className="news-block-comment">
-                      <p>
-                        <i className="bi-chat-left custom-icon me-1" />
-                        35 Comments
-                      </p>
-                    </div>
+                    
                   </div>
                   <div className="news-block-title mb-2">
                     <h4>
@@ -541,9 +461,7 @@ function About(){
                   </div>
                   <div className="news-block-body">
                     <p>
-                      Sed leo nisl, posuere at molestie ac, suscipit auctor
-                      mauris. Etiam quis metus elementum, tempor risus vel,
-                      condimentum orci
+                      The fundraiser project includes food donation drives in targeted areas to provide meals and essential groceries to underprivileged families, helping to reduce hunger and improve nutrition.
                     </p>
                   </div>
                 </div>
@@ -589,10 +507,7 @@ function About(){
                     </h6>
                   </div>
                   <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 16, 2036
-                    </p>
+                   
                   </div>
                 </div>
               </div>
@@ -618,10 +533,7 @@ function About(){
                     </h6>
                   </div>
                   <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 24, 2036
-                    </p>
+                   
                   </div>
                 </div>
               </div>
@@ -712,8 +624,8 @@ function About(){
                   <div className="carousel-item active">
                     <div className="carousel-caption">
                       <h4 className="carousel-title">
-                        Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                        omeg kohm tokito charity theme
+                       support that improved their living conditions, education, and well-being. Their satisfaction reflects the project's meaningful impact and success.
+
                       </h4>
                       <small className="carousel-name">
                         <span className="carousel-name-title">Maria</span>, Boss
@@ -915,106 +827,8 @@ function About(){
         </div>
       </section>
     </main>
-    <footer className="site-footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3 col-12 mb-4">
-            <img src="/assets/images/logo.png" className="logo img-fluid" alt="" />
-          </div>
-          <div className="col-lg-4 col-md-6 col-12 mb-4">
-            <h5 className="site-footer-title mb-3">Quick Links</h5>
-            <ul className="footer-menu">
-              <li className="footer-menu-item">
-                <a href="#" className="footer-menu-link">
-                  Our Story
-                </a>
-              </li>
-              <li className="footer-menu-item">
-                <a href="#" className="footer-menu-link">
-                  Newsroom
-                </a>
-              </li>
-              <li className="footer-menu-item">
-                <a href="#" className="footer-menu-link">
-                  Causes
-                </a>
-              </li>
-              <li className="footer-menu-item">
-                <a href="#" className="footer-menu-link">
-                  Become a volunteer
-                </a>
-              </li>
-              <li className="footer-menu-item">
-                <a href="#" className="footer-menu-link">
-                  Partner with us
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-4 col-md-6 col-12 mx-auto">
-            <h5 className="site-footer-title mb-3">Contact Infomation</h5>
-            <p className="text-white d-flex mb-2">
-              <i className="bi-telephone me-2" />
-              <a href="tel: 305-240-9671" className="site-footer-link">
-                305-240-9671
-              </a>
-            </p>
-            <p className="text-white d-flex">
-              <i className="bi-envelope me-2" />
-              <a href="mailto:info@yourgmail.com" className="site-footer-link">
-                donate@charity.org
-              </a>
-            </p>
-            <p className="text-white d-flex mt-3">
-              <i className="bi-geo-alt me-2" />
-              Akershusstranda 20, 0150 Oslo, Norway
-            </p>
-            <a href="#" className="custom-btn btn mt-3">
-              Get Direction
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="site-footer-bottom">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-7 col-12">
-              <p className="copyright-text mb-0">
-                Copyright © 2036 <a href="#">Kind Heart</a> Charity Org. Design:{" "}
-                <a href="https://templatemo.com" target="_blank">
-                  TemplateMo
-                </a>
-                <br />
-                Distribution:
-                <a href="https://themewagon.com">ThemeWagon</a>
-              </p>
-            </div>
-            <div className="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
-              <ul className="social-icon">
-                <li className="social-icon-item">
-                  <a href="#" className="social-icon-link bi-twitter" />
-                </li>
-                <li className="social-icon-item">
-                  <a href="#" className="social-icon-link bi-facebook" />
-                </li>
-                <li className="social-icon-item">
-                  <a href="#" className="social-icon-link bi-instagram" />
-                </li>
-                <li className="social-icon-item">
-                  <a href="#" className="social-icon-link bi-linkedin" />
-                </li>
-                <li className="social-icon-item">
-                  <a
-                    href="https://youtube.com/templatemo"
-                    className="social-icon-link bi-youtube"
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+
+
 
 
         </>

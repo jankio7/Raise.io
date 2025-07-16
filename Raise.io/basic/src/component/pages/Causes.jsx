@@ -19,28 +19,9 @@ export default function Causes(){
                   <div className="custom-block-body">
                     <h5 className="mb-3">Children Education</h5>
                     <p>
-                      Lorem Ipsum dolor sit amet, consectetur adipsicing kengan
-                      omeg kohm tokito
+                       The fundraiser project focuses on supporting children's education by providing essential resources like books, uniforms, and tuition aid. It aims to ensure underprivileged children have access to quality learning opportunities.
                     </p>
-                    <div className="progress mt-4">
-                      <div
-                        className="progress-bar w-75"
-                        role="progressbar"
-                        aria-valuenow={75}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex align-items-center my-2">
-                      <p className="mb-0">
-                        <strong>Raised:</strong>
-                        $18,500
-                      </p>
-                      <p className="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $32,000
-                      </p>
-                    </div>
+                    
                   </div>
                   <Link to="donate.html" className="custom-btn btn">
                     Donate now
@@ -59,28 +40,9 @@ export default function Causes(){
                   <div className="custom-block-body">
                     <h5 className="mb-3">Poverty Development</h5>
                     <p>
-                      Sed leo nisl, posuere at molestie ac, suscipit auctor
-                      mauris. Etiam quis metus tempor
+                     he fundraiser project aims to support poverty alleviation by funding skill development, basic necessities, and livelihood programs. It seeks to empower underprivileged communities towards sustainable economic growth.
                     </p>
-                    <div className="progress mt-4">
-                      <div
-                        className="progress-bar w-50"
-                        role="progressbar"
-                        aria-valuenow={50}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex align-items-center my-2">
-                      <p className="mb-0">
-                        <strong>Raised:</strong>
-                        $27,600
-                      </p>
-                      <p className="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $60,000
-                      </p>
-                    </div>
+                    
                   </div>
                   <Link to="donate.html" className="custom-btn btn">
                     Donate now
@@ -99,28 +61,9 @@ export default function Causes(){
                   <div className="custom-block-body">
                     <h5 className="mb-3">Supply drinking water</h5>
                     <p>
-                      Orci varius natoque penatibus et magnis dis parturient
-                      montes, nascetur ridiculus
+                      The fundraiser project aims to provide clean and safe drinking water to communities in need by setting up water filters, tanks, or borewells. It focuses on improving health and hygiene through sustainable water solutions.
                     </p>
-                    <div className="progress mt-4">
-                      <div
-                        className="progress-bar w-100"
-                        role="progressbar"
-                        aria-valuenow={100}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex align-items-center my-2">
-                      <p className="mb-0">
-                        <strong>Raised:</strong>
-                        $84,600
-                      </p>
-                      <p className="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $100,000
-                      </p>
-                    </div>
+                    
                   </div>
                   <Link to="donate.html" className="custom-btn btn">
                     Donate now

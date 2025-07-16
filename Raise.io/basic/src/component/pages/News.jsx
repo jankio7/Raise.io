@@ -38,24 +38,7 @@ function News() {
               </div>
               <div className="news-block-info">
                 <div className="d-flex mt-2">
-                  <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 18, 2036
-                    </p>
-                  </div>
-                  <div className="news-block-author mx-5">
-                    <p>
-                      <i className="bi-person custom-icon me-1" />
-                      By Admin
-                    </p>
-                  </div>
-                  <div className="news-block-comment">
-                    <p>
-                      <i className="bi-chat-left custom-icon me-1" />
-                      32 Comments
-                    </p>
-                  </div>
+                  
                 </div>
                 <div className="news-block-title mb-2">
                   <h4>
@@ -69,9 +52,8 @@ function News() {
                 </div>
                 <div className="news-block-body">
                   <p>
-                    This is a Bootstrap 5.2.2 CSS template for charity
-                    organization websites. You can feel free to use it. Please
-                    tell your friends about TemplateMo website. Thank you.
+                     The fundraiser project promotes clothing donation drives in urban areas to collect and 
+                      distribute garments to homeless and low-income families, supporting dignity and basic needs.
                   </p>
                 </div>
               </div>
@@ -99,24 +81,7 @@ function News() {
               </div>
               <div className="news-block-info">
                 <div className="d-flex mt-2">
-                  <div className="news-block-date">
-                    <p>
-                      <i className="bi-calendar4 custom-icon me-1" />
-                      October 12, 2036
-                    </p>
-                  </div>
-                  <div className="news-block-author mx-5">
-                    <p>
-                      <i className="bi-person custom-icon me-1" />
-                      By Admin
-                    </p>
-                  </div>
-                  <div className="news-block-comment">
-                    <p>
-                      <i className="bi-chat-left custom-icon me-1" />
-                      35 Comments
-                    </p>
-                  </div>
+                  
                 </div>
                 <div className="news-block-title mb-2">
                   <h4>
@@ -130,12 +95,7 @@ function News() {
                 </div>
                 <div className="news-block-body">
                   <p>
-                    You are not allowed to redistribute this template ZIP file
-                    on any other template collection website. Please{" "}
-                    <a href="https://templatemo.com/contact" target="_blank">
-                      contact TemplateMo
-                    </a>{" "}
-                    for more information.
+                    The fundraiser project includes food donation drives in targeted areas to provide meals and essential groceries to underprivileged families, helping to reduce hunger and improve nutrition.
                   </p>
                 </div>
               </div>
