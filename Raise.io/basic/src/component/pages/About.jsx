@@ -157,15 +157,17 @@ function About(){
             </div>
             <div className="col-lg-5 col-md-7 col-12">
               <div className="custom-text-block">
-                <h2 className="mb-0">Arshpreet Signh</h2>
+                <h2 className="mb-0">Arshpreet Singh</h2>
                 <p className="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
                 <p>
-                  Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg
-                  kohm tokito Professional charity theme based
+                 Our founding partner plays a vital role in shaping the vision and strategic direction of the fundraiser project. With a deep commitment to social impact, they provide crucial guidance and initial support.
+
+
                 </p>
                 <p>
-                  Sed leo nisl, posuere at molestie ac, suscipit auctor mauris.
-                  Etiam quis metus
+                 
+
+They contribute foundational resources, networking opportunities, and mentorship to ensure project sustainability. Their belief in our mission empowers us to reach underserved communities effectively.
                 </p>
                 <ul className="social-icon mt-4">
                   <li className="social-icon-item">
@@ -727,7 +729,7 @@ function About(){
                 <h2>Raise.io</h2>
                 <div className="contact-image-wrap d-flex flex-wrap">
                   <img
-                    src="/assets/images/slide/boy.jpg"
+                    src="/assets/image/slide/boy.jpg"
                     className="img-fluid avatar-image"
                     alt=""
                   />

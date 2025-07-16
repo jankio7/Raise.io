@@ -40,10 +40,10 @@ export default function Navbar(){
 </header>
 
   <nav
-    className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light"
+    className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light ms-auto"
     id="ftco-navbar"
   >
-    <div className="container">
+    <div className="container mx-auto">
       <Link className="navbar-brand" to="index.html">
         <span className="flaticon-pawprint-1 mr-2" />
         Raise.io
@@ -59,8 +59,8 @@ export default function Navbar(){
       >
         <span className="fa fa-bars" /> Menu
       </button>
-      <div className="collapse navbar-collapse" id="ftco-nav">
-        <ul className="navbar-nav ml-auto">
+      <div className="collapse navbar-collapse " id="ftco-nav">
+        <ul className="navbar-nav ml-auto justify-content:felx-end">
           <li className="nav-item active">
             <Link to="/" className="nav-link">
               Home

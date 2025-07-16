@@ -20,7 +20,7 @@ signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     console.log(userCredential)
     toast.success("Login Successfully!!")
-    nav("/")
+    nav("/") 
   })
 
   .catch((error) => {
@@ -90,11 +90,12 @@ const signInGoogle=()=>
                 />
                 
                 
-                <button type="submit" className="btn btn-primary my-2 " onClick={signInWithEmailAndPassword}>
+                <button type="submit" className="btn btn-primary my-2 col-md-16 col-md-6 mx-auto;
+                   " onClick={signInWithEmailAndPassword}>
                   Submit 
                 </button>     
                 <br/>
-              <button className="btn btn-danger" onClick={signInGoogle}>Sign in with Google</button>
+              <button className="btn btn-danger col-md-6 col-md-6" onClick={signInGoogle}>Sign in with Google</button>
                   <div>Don't have an account? <Link to={"/register"}>Register Here!</Link></div>
                 </form>   
             </div>

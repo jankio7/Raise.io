@@ -16,7 +16,7 @@ export default function Register(){
         let nav = useNavigate()
         const handleForm=(e)=> {
             e.preventDefault()
-            if(fullname=="Ravinder Kumar" && email=="ravinderKumar7332@gmail.com" && password=="12345" && contact=="1234567897" && address=="ghurial(jalandhar)"){
+            if(fullname=="Ravinder Kumar" && email=="ravinderkumar7332@gmail.com" && password=="123456" && contact=="1234567897" && address=="xyz"){
                 toast.success("Login Successfully")
                 nav("/")
             }else{
@@ -88,7 +88,8 @@ export default function Register(){
                   
                   className="form-control"
                   placeholder="contact"
-                
+                  minLength={10}
+                  maxLength={10}
                   value={contact}
                   onChange={(e)=>{
                     setContact(e.target.value)
@@ -101,7 +102,6 @@ export default function Register(){
                   
                   className="form-control"
                   placeholder="Addess"
-                
                   value={address}
                   onChange={(e)=>{
                     setAddress(e.target.value)
