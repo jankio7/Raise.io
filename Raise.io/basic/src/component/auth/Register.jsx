@@ -1,6 +1,9 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast,ToastContainer } from "react-toastify";
+
+import { toast, } from "react-toastify";
+import { auth,db } from "../../Firebase";
+import { doc , setDoc , Timestamp } from "firebase/firestore";
 
 export default function Register(){
         const [fullname,setFullName]=useState("")
@@ -9,24 +12,42 @@ export default function Register(){
         const [contact,setContact]=useState("")
         const [address,setAddress]=useState("")
 
-        const changeEmail=(e)=>{
-          console.log(e);
-          setEmail(e.target.value)
-        }
-        let nav = useNavigate()
-        const handleForm=(e)=> {
-            e.preventDefault()
-            if(fullname=="Ravinder Kumar" && email=="ravinderkumar7332@gmail.com" && password=="123456" && contact=="1234567897" && address=="xyz"){
-                toast.success("Login Successfully")
-                nav("/")
-            }else{
-                toast.error("Invalid Credentials!!")
-            }
-        }
+       const handleForm=(e)=>{
+        e.preventDefault()
+        createUserWithEmailAndPassword(auth,email,password)
+         .then((userCred)=>{
+          let userId=userCred.user.uid
+          saveData(userId)
+         })
+         .catch((error)=>{
+          toast.error(error.message)
+         })
+       } 
         
+       const saveData=async(userId)=>{
+        try{
+          let data={
+            fullname:fullname,
+            email:email,
+            password:password,
+            contact:contact,
+            address:address,
+            userId:userId,
+            userType:5,
+            status:true,
+            createAt:Timestamp.now()
+          }
+          await setDoc(doc(db,"users",userId),data)
+          toast.success("Register Successfully!")
+
+        }
+        catch(err){
+          toast.error(err.message)
+        }
+       }
         return(
         <>
-        <ToastContainer />
+        
         <div className="col-lg-5 col-12 mx-auto" mr-5>
               <form
                 className="custom-form contact-form my-5 justify-content:center"
@@ -65,7 +86,9 @@ export default function Register(){
                   placeholder="Email"
                 
                   value={email}
-                  onChange={changeEmail}
+                  onChange={(e)=>{
+                     setEmail(e.target.value)
+                  }}
                 />
                  
                  <input
