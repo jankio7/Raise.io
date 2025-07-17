@@ -46,7 +46,7 @@ function About(){
                     />
                     <div className="carousel-caption d-flex flex-column justify-content-end">
                       <h1>Humanity</h1>
-                      <p>Please tell your friends about our website</p>
+                      <p>Donate for Charity</p>
                     </div>
                   </div>
                 </div>
@@ -729,7 +729,7 @@ They contribute foundational resources, networking opportunities, and mentorship
                 <h2>Raise.io</h2>
                 <div className="contact-image-wrap d-flex flex-wrap">
                   <img
-                    src="/assets/image/slide/boy.jpg"
+                    src="/assets/images/boy.jpg"
                     className="img-fluid avatar-image"
                     alt=""
                   />

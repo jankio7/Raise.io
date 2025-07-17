@@ -40,7 +40,7 @@ export default function Register(){
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-12">
                     <input
-                      type="Full Name"
+                      type="text"
                       name="subject"
                       id="subject"
                       className="form-control"
@@ -82,7 +82,7 @@ export default function Register(){
                   }}
                 /> 
                 <input
-                  type="contact"
+                  type="tel"
                   name="subject"
                   id="subject"
                   
@@ -96,7 +96,7 @@ export default function Register(){
                   }}
                 />
                  <input
-                  type="contact"
+                  type="text"
                   name="subject"
                   id="subject"
                   
