@@ -175,7 +175,7 @@ function Donate(){
                     name="donation-name"
                     id="donation-name"
                     className="form-control"
-                    placeholder="Jack Doe"
+                    placeholder="Name"
                     required=""
                   />
                 </div>
@@ -186,7 +186,7 @@ function Donate(){
                     id="donation-email"
                     pattern="[^ @]*@[^ @]*"
                     className="form-control"
-                    placeholder="Jackdoe@gmail.com"
+                    placeholder="user@gmail.com"
                     required=""
                   />
                 </div>

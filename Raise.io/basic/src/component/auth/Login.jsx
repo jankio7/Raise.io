@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider} from "firebase/auth";
-import {auth} from "../../Firebase";
+import {auth , db} from "../../Firebase";
+import {doc , getDoc} from "firebase/firestore"
 
 export default function Login(){
         const [email,setEmail]=useState("")
@@ -11,44 +12,54 @@ export default function Login(){
           
                setEmail(e.target.value)
          } 
-           let nav=useNavigate()
-   const handleForm=(e)=>{
-    e.preventDefault()
-  
-signInWithEmailAndPassword(auth, email, password)
-
-  .then((userCredential) => {
-    console.log(userCredential)
-    toast.success("Login Successfully!!")
-    nav("/") 
-  })
-
-  .catch((error) => {
-    toast.error(error.message)
-  });
-}
-const signInGoogle=()=>
-{
-  let provider=new GoogleAuthProvider()
-  signInWithPopup(auth , provider)
-  .then((userCred)=>
-  {
-    console.log(userCred.user.uid)
-    toast.success("Login Successfully")
-  })
-  .catch((error)=>
-  {
-    toast.error(error.message)
-  })
-}
-        
-  
+          
+         let nav=useNavigate() //hook which redirect from one page to other
+           const handleForm=(e)=>{
+             e.preventDefault() //stops form from reloading
+             signInWithEmailAndPassword(auth, email, password)
+             .then((userCred)=>{
+               // console.log("sign in", userCred.user.uid);
+               let userId=userCred.user.uid
+               getUserData(userId)
+             })
+             .catch((error)=>{
+               toast.error(error.message);
+             })
+           }
+         
+           const getUserData=async (userId)=>{
+             // console.log(userId);
+            let userDoc=await getDoc(doc(db,"users", userId))
+           //  console.log(userDoc.data());
+            let userData=userDoc.data()
+            sessionStorage.setItem("name", userData?.name)
+            sessionStorage.setItem("email", userData?.email)
+            sessionStorage.setItem("userType", userData?.userType)
+            sessionStorage.setItem("userId", userId)
+            sessionStorage.setItem("isLogin", true)
+            toast.success("Login successfully")
+            if(userData?.userType==1){
+             nav("/admin")
+            }else{
+             nav("/")
+            }
+           }
+         
+           const signInGoogle=()=>{
+             let provider=new GoogleAuthProvider()
+             signInWithPopup(auth, provider)
+             .then((userCred)=>{
+                 let userId=userCred.user.uid;
+                getUserData(userId)
+             })
+             .catch((err)=>{
+               toast.error(err.message)
+             })
+           }
            return(
         <> 
 
-        
-
-            <div className="col-lg-5 col-12 mx-auto" mr-5>
+         <div className="col-lg-5 col-12 mx-auto" >
               <form
                 className="custom-form contact-form my-5"
                 action="#"
@@ -96,7 +107,7 @@ const signInGoogle=()=>
                 </button>     
                 <br/>
               <button className="btn btn-danger col-md-6 col-md-6" onClick={signInGoogle}>Sign in with Google</button>
-                  <div>Don't have an account? <Link to={"/register"}>Register Here!</Link></div>
+                  <div className="my-3">Don't have an account? <Link to={"/register"}>Register Here!</Link></div>
                 </form>   
             </div>
 

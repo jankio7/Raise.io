@@ -87,7 +87,7 @@ function About(){
             </div>
             <div className="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
               <div className="featured-block d-flex justify-content-center align-items-center">
-                <a href="donate.html" className="d-block">
+                <Link to="/donate" className="nav-link">
                   <img
                     src="/assets/images/icons/hands.png"
                     className="featured-block-image img-fluid"
@@ -96,12 +96,12 @@ function About(){
                   <p className="featured-block-text">
                     Become a <strong>volunteer</strong>
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
               <div className="featured-block d-flex justify-content-center align-items-center">
-                <a href="donate.html" className="d-block">
+                <Link to="/donate" className="nav-link">
                   <img
                     src="/assets/images/icons/heart.png"
                     className="featured-block-image img-fluid"
@@ -110,12 +110,12 @@ function About(){
                   <p className="featured-block-text">
                     <strong>Caring</strong> Earth
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
               <div className="featured-block d-flex justify-content-center align-items-center">
-                <a href="donate.html" className="d-block">
+                <Link to="/donate" className="nav-link">
                   <img
                     src="/assets/images/icons/receive.png"
                     className="featured-block-image img-fluid"
@@ -124,12 +124,12 @@ function About(){
                   <p className="featured-block-text">
                     Make a <strong>Donation</strong>
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
               <div className="featured-block d-flex justify-content-center align-items-center">
-                <a href="donate.html" className="d-block">
+                <Link to="/donate" className="nav-linm">
                   <img
                     src="/assets/images/icons/scholarship.png"
                     className="featured-block-image img-fluid"
@@ -138,7 +138,7 @@ function About(){
                   <p className="featured-block-text">
                     <strong>Scholarship</strong> Program
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

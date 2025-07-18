@@ -12,6 +12,8 @@ import Volunter from "./component/pages/Volunter";
 import News1 from "./component/pages/news1";
 import Contact from "./component/pages/Contact";
 import Register from "./component/auth/Register";
+import { ToastContainer } from "react-toastify";
+import Organization from "./component/pages/Organization";
 
 
 
@@ -20,7 +22,7 @@ import Register from "./component/auth/Register";
 function App() {
   return(
     <>
-         
+         <ToastContainer/>
          <BrowserRouter>
               
             <Routes>
@@ -36,6 +38,7 @@ function App() {
                 <Route path="detail1" element={<Newsdetail />} />
                 <Route path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
+                <Route path="organization" element={<Organization/>}/>
               </Route>
               <Route path="/" element={<Error/>}/>
           </Routes>

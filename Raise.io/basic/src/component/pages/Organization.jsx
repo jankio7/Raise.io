@@ -1,16 +1,16 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-
 import { toast } from "react-toastify";
 import { auth,db } from "../../Firebase";
 import { doc , setDoc , Timestamp } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 
-export default function Register(){
-        const [fullname,setFullName]=useState("")
+export default function Organization(){
+        const [name,setName]=useState("")
         const [email,setEmail]=useState("")
         const [password,setPassword]=useState("")
         const [contact,setContact]=useState("")
+        const [gstin,setGstIn]=useState("")
+        const [about,setAbout]=useState("")
         const [address,setAddress]=useState("")
 
        const handleForm=(e)=>{
@@ -28,40 +28,25 @@ export default function Register(){
        const saveData=async(userId)=>{
         try{
           let data={
-            fullname:fullname,
+            name:name,
             email:email,
             password:password,
             contact:contact,
-            address:address,
+            gstin:gstin,
+            about:about,
             userId:userId,
-            userType:5,
+            userType:3,
             status:true,
             createAt:Timestamp.now()
           }
           await setDoc(doc(db,"users",userId),data)
           toast.success("Register Successfully!")
-          getUserData(userId)
+
         }
         catch(err){
           toast.error("err.message")
         }
        }
-       const nav=useNavigate()
-        const getUserData=async(userId)=>{
-          let userDoc=await getDoc(doc(db,"users",userId))
-          let userData=userDoc.data()
-               sessionStorage.setItem("name", userData?.name)
-               sessionStorage.setItem("email", userData?.email)
-               sessionStorage.setItem("userType", userData?.userType)
-               sessionStorage.setItem("userId", userId)
-               sessionStorage.setItem("isLogin", true)
-               toast.success("Login successfully")
-               if(userData?.userType==1){
-                nav("/admin")
-               }else{
-                nav("/")
-               }
-        }
         return(
         <>
         
@@ -73,7 +58,7 @@ export default function Register(){
                 role="form"
                 onSubmit={handleForm}
               >
-                <h2 className=" my-3 justify-content:center">Register Here</h2>
+                <h2 className=" my-3 justify-content:center">Organization</h2>
                 
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-12">
@@ -82,10 +67,10 @@ export default function Register(){
                       name="subject"
                       id="subject"
                       className="form-control"
-                      placeholder="Full Name"
-                      value={fullname}
+                      placeholder="Name"
+                      value={name}
                       onChange={(e)=>{
-                        setFullName(e.target.value)
+                        setName(e.target.value)
                       }}
 
 
@@ -141,7 +126,33 @@ export default function Register(){
                   id="subject"
                   
                   className="form-control"
-                  placeholder="Addess"
+                  placeholder="gstin"
+                  value={gstin}
+                  onChange={(e)=>{
+                    setGstIn(e.target.value)
+                  }}
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  
+                  className="form-control"
+                  placeholder="about"
+                  value={about}
+                  onChange={(e)=>{
+                    setAbout(e.target.value)
+                  }}
+                />
+               
+                
+                  <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  
+                  className="form-control"
+                  placeholder="address"
                   value={address}
                   onChange={(e)=>{
                     setAddress(e.target.value)

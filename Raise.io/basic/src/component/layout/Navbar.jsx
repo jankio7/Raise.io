@@ -1,7 +1,35 @@
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import Swal from "sweetalert2"
 export default function Navbar(){
-    return(
+    let isLogin=sessionStorage.getItem("isLogin")
+    let name=sessionStorage.getItem("name")
+    const nav=useNavigate()
+    ///sweetalert2
+    const logout=()=>{
+
+        Swal.fire({
+        title: "Are you sure you want to logout?",
+        // text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout!"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            sessionStorage.clear()
+            nav("/login")
+            Swal.fire({
+            title: "Logout!",
+            text: "Logout successfully.",
+            icon: "success"
+            });
+        }
+        });
+    }
+
+return(
         <>
          <header className="site-header">
   <div className="container">
@@ -122,16 +150,30 @@ export default function Navbar(){
               Donate
             </Link>
           </li>
+          {
+            isLogin?
+            <li className="nav-item">
+            <Link to={"#"}  onClick={logout} className="nav-link">
+              Logout{name}
+            </Link>
+            </li>
+          :
            <li className="nav-item">
             <Link to={"/login"} className="nav-link">
               Login
             </Link>
           </li>
+          }
           <li className="nav-item">
+            <Link to={"/organization"} className="nav-link">
+              Organization
+            </Link>
+          </li>
+          {/* <li className="nav-item">
             <Link to={"/register"} className="nav-link">
               Register
             </Link>
-          </li>
+          </li> */}
           
         </ul>
       </div>
