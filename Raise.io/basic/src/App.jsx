@@ -14,6 +14,9 @@ import Contact from "./component/pages/Contact";
 import Register from "./component/auth/Register";
 import { ToastContainer } from "react-toastify";
 import Organization from "./component/pages/Organization";
+import AdminLayout from "./component/layout/AdminLayout";
+import OrganiserLayout from "./component/layout/OrganiserLayout";
+import UserLayout from "./component/layout/UserLayout";
 
 
 
@@ -40,6 +43,17 @@ function App() {
                 <Route path="register" element={<Register/>}/>
                 <Route path="organization" element={<Organization/>}/>
               </Route>
+
+              <Route path="/admin" element={<AdminLayout/>}>
+              </Route>
+ 
+              <Route path="/organiser" element={<OrganiserLayout/>} >
+              </Route>
+
+              <Route path="/user" element={<UserLayout/>}>
+              </Route>
+               
+              
               <Route path="/" element={<Error/>}/>
           </Routes>
           </BrowserRouter>
