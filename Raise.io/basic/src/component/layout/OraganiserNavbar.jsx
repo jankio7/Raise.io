@@ -90,13 +90,13 @@ export default function OrganiserNavabr(){
                  <div className="collapse navbar-collapse " id="ftco-nav">
                    <ul className="navbar-nav ml-auto justify-content:felx-end">
                      <li className="nav-item active">
-                       <Link to="/" className="nav-link">
-                         Register
+                       <Link to="campaign" className="nav-link">
+                         Add Campaign
                        </Link>
                      </li>
                      <li className="nav-item">
                        <Link to={"/about"} className="nav-link">
-                         Campaign
+                        Manage  Campaign
                        </Link>
                      </li>
                  
