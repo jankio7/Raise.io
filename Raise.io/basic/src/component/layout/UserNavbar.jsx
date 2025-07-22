@@ -90,12 +90,12 @@ export default function UserNavabr(){
                  <div className="collapse navbar-collapse " id="ftco-nav">
                    <ul className="navbar-nav ml-auto justify-content:felx-end">
                      <li className="nav-item active">
-                       <Link to="/" className="nav-link">
+                       <Link to="register" className="nav-link">
                          Register
                        </Link>
                      </li>
                      <li className="nav-item">
-                       <Link to={"/about"} className="nav-link">
+                       <Link to={"campaign"} className="nav-link">
                          Category
                        </Link>
                      </li>

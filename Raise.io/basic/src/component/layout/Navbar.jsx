@@ -68,10 +68,10 @@ return(
 </header>
 
   <nav
-    className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light ms-auto"
+    className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light "
     id="ftco-navbar"
   >
-    <div className="container mx-auto">
+    <div className="container ">
       <Link className="navbar-brand" to="index.html">
         <span className="flaticon-pawprint-1 mr-2" />
         Raise.io
@@ -85,11 +85,11 @@ return(
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="fa fa-bars" /> Menu
+        <span className="fa fa-bars  " /> Menu
       </button>
-      <div className="collapse navbar-collapse " id="ftco-nav">
-        <ul className="navbar-nav ml-auto justify-content:felx-end">
-          <li className="nav-item active">
+      <div className=" navbar-collapse justify-content: center  " id="ftco-nav">
+        <ul className="navbar-nav justify-content:center ">
+          <li className="nav-item ">
             <Link to="/" className="nav-link">
               Home
             </Link>

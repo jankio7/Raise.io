@@ -17,8 +17,10 @@ import Organization from "./component/pages/Organization";
 import AdminLayout from "./component/layout/AdminLayout";
 import OrganiserLayout from "./component/layout/OrganiserLayout";
 import UserLayout from "./component/layout/UserLayout";
-import AddCategory from "./component/admin/category/AddCategory";
-import AddCampaign from "./component/user/campaign/AddCampaign";
+import AddCategory from "./component/admin/AddCategory";
+import AddCampaign from "./component/organiser/AddCampaign";
+import AddRegister from "./component/user/AddRegister";
+
 
 
 
@@ -49,14 +51,16 @@ function App() {
               </Route>
 
               <Route path="/admin" element={<AdminLayout/>}>
-                <Route path="addcategory" element={<AddCategory/>}/>
+                <Route path="category" element={<AddCategory/>}/>
               </Route>
  
               <Route path="/organiser" element={<OrganiserLayout/>} >
                 <Route path="campaign" element={<AddCampaign/>}/>
               </Route>
 
-              <Route path="/user" element={<UserLayout/>}></Route>
+              <Route path="/user" element={<UserLayout/>}>
+                <Route path="register" element={<AddRegister/>}/>
+              </Route>
                
               
               <Route path="/" element={<Error/>}/>

@@ -87,26 +87,26 @@ export default function AdminNavbar(){
                  </button>
                  <div className="collapse navbar-collapse " id="ftco-nav">
                    <ul className="navbar-nav ml-auto justify-content:felx-end">
-                     <li className="nav-item ">
-                       <Link to="addcategory" className="nav-link">
-                        Add Category
+                     <li className="nav-item active">
+                       <Link to="category" className="nav-link">
+                         Category
                        </Link>
                      </li>
                      <li className="nav-item">
                        <Link to={"/about"} className="nav-link">
-                         Manage Category
+                         Campaign
                        </Link>
                      </li>
                  
                      <li className="nav-item">
                        <a href="/causes" className="nav-link">
-                        Manage Campaign
+                         Reguests
                        </a>
                      </li>
                     
                      <li className="nav-item">
                        <Link to={"/volunter"} className="nav-link">
-                        View Donation
+                         Donation
                        </Link>
                       </li>
                                

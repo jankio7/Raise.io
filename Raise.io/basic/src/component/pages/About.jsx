@@ -165,7 +165,9 @@ function About(){
 
                 </p>
                 <p>
-                  They contribute foundational resources, networking opportunities, and mentorship to ensure project sustainability. Their belief in our mission empowers us to reach underserved communities effectively.
+                 
+
+They contribute foundational resources, networking opportunities, and mentorship to ensure project sustainability. Their belief in our mission empowers us to reach underserved communities effectively.
                 </p>
                 <ul className="social-icon mt-4">
                   <li className="social-icon-item">
