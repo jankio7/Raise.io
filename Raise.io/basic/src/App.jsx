@@ -21,6 +21,7 @@ import AddCategory from "./component/admin/AddCategory";
 import AddCampaign from "./component/organiser/AddCampaign";
 import AddRegister from "./component/user/AddRegister";
 import ManageCategory from "./component/admin/ManageCategory";
+import UpdateCategory from "./component/admin/UpdateCategory";
 
 
 
@@ -54,6 +55,7 @@ function App() {
               <Route path="/admin" element={<AdminLayout/>}>
                 <Route path="category" element={<AddCategory/>}/>
                 <Route path="managecategory" element={<ManageCategory/>}/>
+                <Route path="category/:id" element={<UpdateCategory/>}/>
               </Route>
  
               <Route path="/organiser" element={<OrganiserLayout/>} >

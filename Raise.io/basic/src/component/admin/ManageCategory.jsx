@@ -1,38 +1,67 @@
-import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore"
+import { addDoc, collection, deleteDoc,doc,onSnapshot, query,Timestamp ,} from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { db } from "../../Firebase"
 import { toast } from "react-toastify"
 import { Link } from "react-router-dom"
+import Swal from "sweetalert2"
+import { RingLoader } from "react-spinners"
 
 export default function ManageCategory(){
-
+     const [load, setLoad]=useState(true)
     const [AllCategory,setCategory]=useState([])
 
     const fetchData=()=>{
-       onSnapshot(collection(db,"category"),(categoryData)=>{
+         const q=query(collection(db,"category")
+        //  where("type","==","Education")
+    )
+                onSnapshot(q,(categoryData)=>{
        
          setCategory(
             categoryData.docs.map((el)=>{
-            // console.log(el.id,el.data());
-            return( el.id, el.data())
-
-            
-
-            
-        })
-         )
-       
-        
+           
+           return{id:el.id,...el.data()}
+          }))
+         setLoad(false)
+         
        })
         
     }
 
     useEffect(()=>{
         fetchData()
-        // console.log(AllBreeds);
+       
         
     },[])
-  
+    
+    const DeleteCategory= async(CategoryId)=>{
+            
+          Swal.fire({
+                  title: "Are you sure?",
+                  text: "You won't be able to revert this!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Yes, delete it!"
+                  }).then(async (result) => {
+                  if (result.isConfirmed) {
+                      await deleteDoc(doc(db,"category",CategoryId))
+                      .then(()=>{
+                          Swal.fire({
+                          title: "Deleted!",
+                          text: "Your file has been deleted.",
+                          icon: "success"
+                          });
+          
+                      }).catch((error)=>{
+                          toast.error(error.message)
+                      })
+                     
+                  }
+                  });  
+
+            }
+    
     return(
         <>
         {/* <section
@@ -58,10 +87,14 @@ export default function ManageCategory(){
                 </div>
             </section> */}
             <div className="container my-5">
-
-                {/* contact form  */}
+                    {load?
+                               <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                :
             <div className="row justify-content-center no-gutters">
               <div className="col-md-6" style={{boxShadow:"0px 0px 15px gray"}}>
+                   <div className="d-flex justify-content-end p-2">
+                        <Link to={"/admin/category"} className="btn btn-outline-dark">Add New +</Link>
+                   </div>
                 <div className="contact-wrap w-100 p-md-2 p-2">
                   <h3 className="mb-5">Manage Catgory</h3>
                   <table className="table table-border table-hover">
@@ -80,8 +113,12 @@ export default function ManageCategory(){
                                         <th scope="row">{index+1}</th>    
                                         <td>{el.categoryname}</td>
                                         <td><img className="img-fluid w-80 h-80" src={el.poster}/></td>
-                                         <td>{el.Actions}</td>
-                                         <td><button className="btn btn-danger">button</button>
+                                         <td className="">{el.Actions}</td>
+                                         <td>
+                                            <Link to={"/admin/category/"+el.id} className="btn btn-success my-1">Edit</Link>
+                                            <button className="btn btn-danger" onClick={()=>{
+                                            DeleteCategory(el.id)
+                                         }}>Delete</button>
                                          </td>
                                     </tr>                               
                             </tbody>
@@ -113,8 +150,9 @@ export default function ManageCategory(){
                                         
                                         </div>
                                     </div>
-                                    
                                     </div>
+
+                                    }
                                     </div>
 
                                 </>

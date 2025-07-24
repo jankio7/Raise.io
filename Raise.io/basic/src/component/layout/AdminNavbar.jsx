@@ -91,6 +91,10 @@ export default function AdminNavbar(){
                        <Link to="category" className="nav-link">
                          Category
                        </Link>
+                       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <Link class="dropdown-item" to={"/admin/category"}>Add</Link>
+                        <Link class="dropdown-item" to={"/admin/category"}>Manage</Link>
+                    </div>
                      </li>
                      <li className="nav-item">
                        <Link to={"managecategory"} className="nav-link">
