@@ -93,19 +93,19 @@ export default function AdminNavbar(){
                        </Link>
                      </li>
                      <li className="nav-item">
-                       <Link to={"/about"} className="nav-link">
+                       <Link to={"managecategory"} className="nav-link">
                          Campaign
                        </Link>
                      </li>
                  
                      <li className="nav-item">
-                       <a href="/causes" className="nav-link">
+                       <a href="" className="nav-link">
                          Reguests
                        </a>
                      </li>
                     
                      <li className="nav-item">
-                       <Link to={"/volunter"} className="nav-link">
+                       <Link to={""} className="nav-link">
                          Donation
                        </Link>
                       </li>

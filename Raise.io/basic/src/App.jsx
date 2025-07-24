@@ -20,6 +20,7 @@ import UserLayout from "./component/layout/UserLayout";
 import AddCategory from "./component/admin/AddCategory";
 import AddCampaign from "./component/organiser/AddCampaign";
 import AddRegister from "./component/user/AddRegister";
+import ManageCategory from "./component/admin/ManageCategory";
 
 
 
@@ -52,6 +53,7 @@ function App() {
 
               <Route path="/admin" element={<AdminLayout/>}>
                 <Route path="category" element={<AddCategory/>}/>
+                <Route path="managecategory" element={<ManageCategory/>}/>
               </Route>
  
               <Route path="/organiser" element={<OrganiserLayout/>} >
