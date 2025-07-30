@@ -106,19 +106,19 @@ export default function UserNavabr(){
                        </Link>
                      </li>
                  
-                     <li className="nav-item">
+                     {/* <li className="nav-item">
                        <Link to="" className="nav-link">
                          Campaign
                        </Link>
                      </li>
                     
                      <li className="nav-item">
-                       <Link to="donate2" className="nav-link">
+                       <Link to="donate" className="nav-link">
                           Donate
                        </Link>
-                      </li>
+                      </li> */}
                        <li className="nav-item">
-                       <Link to="managepayment" className="nav-link">
+                       <Link to="donation3" className="nav-link">
                           View Donation
                        </Link>
                       </li>

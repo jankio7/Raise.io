@@ -111,69 +111,41 @@ return(
               Causes
             </a>
           </li>
+          <li className="nav-item">
+            <a href="/category" className="nav-link">
+              Campaign
+            </a>
+          </li>
          
-          <li className="nav-item">
-            <Link to={"/volunter"} className="nav-link">
-              Volunter
-            </Link>
-                    </li>
-             <li className="nav-item dropdown">
-                <Link
-                  className="nav-link click-scroll dropdown-toggle"
-                  to="news"
-                  id="navbarLightDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  News
-                </Link>
-                <ul
-                  className="dropdown-menu dropdown-menu-light"
-                  aria-labelledby="navbarLightDropdownMenuLink"
-                >
-                  <li>
-                    <Link className="dropdown-item" to="/news1">
-                      News Listing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/detail1">
-                      News Detail
-                    </Link>
-                  </li>
-                </ul>
-          </li>
-
-          
-          <li className="nav-item">
-            <Link to={"/contact"} className="nav-link">
-              Contact
-            </Link>
-          </li>
-          {/* <li className="nav-item">
-            <Link to={"/donate"} className="nav-link">
-              Donate
-            </Link>
-          </li> */}
-          <li className="nav-item">
-            <Link to={"/organization"} className="nav-link">
-              Organization
-            </Link>
-          </li>
+       
+         
           {
             isLogin?
+            <>
+            <li className="nav-item">
+            <Link to={"/donation3"}  className="nav-link">
+              Donation
+            </Link>
+            </li>
             <li className="nav-item">
             <Link to={"#"}  onClick={logout} className="nav-link">
               Logout{name}
             </Link>
             </li>
+            </>
           :
+          <>
+           <li className="nav-item">
+            <Link to={"/organization"} className="nav-link">
+              Organization
+            </Link>
+          </li>
            <li className="nav-item">
             <Link to={"/login"} className="nav-link">
               Login
             </Link>
           </li>
+          </>
           }
           {/* <li className="nav-item">
             <Link to={"/organization"} className="nav-link">

@@ -1,17 +1,17 @@
-import { collection, onSnapshot, query, updateDoc, getDoc, doc } from "firebase/firestore";
+import { collection, onSnapshot, query, updateDoc, getDoc, doc, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RingLoader } from "react-spinners";
 import { db } from "../../Firebase";
 import { toast } from "react-toastify";
 
-export default function ViewDonation() {
+export default function UserViewDonation() {
      const [load, setLoad]=useState(true)
-  const [AllDonation, setDonation] = useState([]);
+     const [AllDonation, setDonation] = useState([]);
 
   const fetchData = () => {
     const q =query (collection(db, "donations")
-    // , where("organiserId","==",sessionStorage.getItem("userId"))
+    , where("userId","==",sessionStorage.getItem("userId"))
     );
 
 
@@ -24,7 +24,6 @@ export default function ViewDonation() {
                 
         });
         setLoad(false)
-             
         let updateData=[]
         for(let i=0;i<donationData.length;i++){
             let userId=donationData[i].userId
@@ -78,7 +77,7 @@ export default function ViewDonation() {
     <>
       <div className="container my-5">
         {load?
-                 <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+               <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
           :
         <div className="row justify-content-center no-gutters">
           <div className="col-md-10" style={{ boxShadow: "0px 0px 15px gray" }}>
@@ -91,7 +90,6 @@ export default function ViewDonation() {
                 <thead>
                   <tr>
                     <th scope="col">S.No</th>
-                    <th scope="col">User</th>
                     <th scope="col">Organiser</th>
                     <th scope="col">Campaign</th>
                     <th scope ="col">Amount</th>
@@ -103,11 +101,7 @@ export default function ViewDonation() {
                     <tbody>
                       <tr>
                         <th scope="row">{index + 1}</th>
-                        <th>
-                            {el?.user?.fullname}<br/>
-                            {el?.user?.email}<br/>
-                            {el?.user?.contact}<br/>
-                        </th>
+                      
                         <th>
                             {el?.organiser?.fullname}<br/>
                             {el?.organiser?.email}<br/>
@@ -125,7 +119,7 @@ export default function ViewDonation() {
             </div>
           </div>
         </div>
-       }
+         }
       </div>
     </>
   );

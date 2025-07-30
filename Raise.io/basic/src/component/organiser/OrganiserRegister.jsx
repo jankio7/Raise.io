@@ -67,7 +67,10 @@ export default function OrganiserRegister(){
         return(
         <>
         
-        <div className="col-lg-5 col-12 mx-auto" mr-5>
+        <div className="col-lg-5 col-12 mx-auto" >
+           {load?
+                    <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                : 
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -180,7 +183,8 @@ export default function OrganiserRegister(){
                 </button>
                 
               </form>
-            </div>
+            }  
+          </div>
           
     
  

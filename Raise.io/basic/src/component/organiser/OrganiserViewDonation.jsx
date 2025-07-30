@@ -1,17 +1,17 @@
-import { collection, onSnapshot, query, updateDoc, getDoc, doc } from "firebase/firestore";
+import { collection, onSnapshot, query, updateDoc, getDoc, doc, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RingLoader } from "react-spinners";
 import { db } from "../../Firebase";
 import { toast } from "react-toastify";
 
-export default function ViewDonation() {
+export default function OrganiserViewDonation() {
      const [load, setLoad]=useState(true)
   const [AllDonation, setDonation] = useState([]);
 
   const fetchData = () => {
     const q =query (collection(db, "donations")
-    // , where("organiserId","==",sessionStorage.getItem("userId"))
+    , where("organiserId","==",sessionStorage.getItem("userId"))
     );
 
 
@@ -78,8 +78,8 @@ export default function ViewDonation() {
     <>
       <div className="container my-5">
         {load?
-                 <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
-          :
+                <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+         :
         <div className="row justify-content-center no-gutters">
           <div className="col-md-10" style={{ boxShadow: "0px 0px 15px gray" }}>
             <div className="d-flex justify-content-end p-2">
@@ -92,7 +92,6 @@ export default function ViewDonation() {
                   <tr>
                     <th scope="col">S.No</th>
                     <th scope="col">User</th>
-                    <th scope="col">Organiser</th>
                     <th scope="col">Campaign</th>
                     <th scope ="col">Amount</th>
                     <th scope="col">Status</th>
@@ -108,11 +107,7 @@ export default function ViewDonation() {
                             {el?.user?.email}<br/>
                             {el?.user?.contact}<br/>
                         </th>
-                        <th>
-                            {el?.organiser?.fullname}<br/>
-                            {el?.organiser?.email}<br/>
-                            {el?.organiser?.contact}<br/>
-                        </th>
+                     
                         <th>{el?.campaign?.campaigntitle}</th>
                         <th>&#8377;{el?.amount}</th>
                         <th>{el?.status}</th>
@@ -125,7 +120,7 @@ export default function ViewDonation() {
             </div>
           </div>
         </div>
-       }
+        }
       </div>
     </>
   );

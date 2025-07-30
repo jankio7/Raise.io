@@ -5,9 +5,11 @@ import { addDoc, collection, onSnapshot, query, Timestamp } from "firebase/fires
 import { toast } from "react-toastify"
 import axios from "axios"
 import { db } from "../../Firebase"
+import { RingLoader } from "react-spinners"
 
 
 export default function AddCampaign(){
+   const [load, setLoad]=useState(true)
     const [campaigntitle,setCampaignTitle]=useState("")
      const [type, setType]=useState("")
      const [description,setDescription]=useState("") 
@@ -98,7 +100,10 @@ export default function AddCampaign(){
     }
      return(
         <>
-          <div className="col-lg-5 col-12 mx-auto" mr-5>
+          <div className="col-lg-5 col-12 mx-auto" >
+             {load?
+                    <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                : 
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -195,7 +200,8 @@ export default function AddCampaign(){
                 </button>
                 
               </form>
-            </div>
+            }  
+          </div>
           
     
         </>

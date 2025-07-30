@@ -78,7 +78,7 @@ export default function ManagePayment(){
                 <div className="overlay" />
                 <div className="container">
                 <div className="row no-gutters slider-text align-items-end">
-                    <div className="col-md-9 ftco-animate pb-5">
+                    {/* <div className="col-md-9 ftco-animate pb-5">
                     <p className="breadcrumbs mb-2">
                         <span className="mr-5">
                         <a href="index.html">
@@ -90,7 +90,7 @@ export default function ManagePayment(){
                         </span>
                     </p>
                     <h1 className="mb-0 bread">payment</h1>
-                    </div>
+                    </div> */}
                 </div>
                 </div>
             </section>

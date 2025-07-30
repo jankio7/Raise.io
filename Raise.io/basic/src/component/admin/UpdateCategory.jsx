@@ -5,9 +5,11 @@ import { toast } from "react-toastify"
 import axios from "axios"
 import { db } from "../../Firebase"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import { RingLoader } from "react-spinners"
 
    
 export default function UpdateCategory(){
+      const [load, setLoad]=useState(true)
      const {id}=useParams()
      const [categoryname,setCategoryName]=useState("")
      const [poster,setPoster]=useState({})
@@ -35,6 +37,7 @@ export default function UpdateCategory(){
                           `https://api.cloudinary.com/v1_1/dsc2mxwti/image/upload`, 
                           formData
                             );
+                             setLoad(false)
                       saveData(response.data.secure_url)
                     } catch (error) {
                         toast.error("Error uploading image:", error.message);
@@ -69,7 +72,10 @@ export default function UpdateCategory(){
 
     return(
         <>
-           <div className="col-lg-5 col-12 mx-auto" >
+          <div className="col-lg-5 col-12 mx-auto" >
+             {load?
+                    <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                :   
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -117,7 +123,8 @@ export default function UpdateCategory(){
                 </button>
                 
               </form>
-            </div>
+            }
+          </div>
            
     
  

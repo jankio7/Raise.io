@@ -6,9 +6,11 @@ import { db } from "../../Firebase"
 export default function DashBoard() {
      const [category, setCategory]=useState(0)
         const [campaign, setCampaign]=useState(0)
+        const [organization,setOrganization]=useState(0)
         useEffect(()=>{
             fetchUserCount()
             fetchBreedCount()
+            fetchorganizationCount()
         },[])
         const fetchUserCount=async ()=>{
             let usersCount= await getCountFromServer(collection(db,"category"))
@@ -17,6 +19,11 @@ export default function DashBoard() {
         const fetchBreedCount=async ()=>{
             let campaignCount= await getCountFromServer(collection(db,"campaign"))
             setCampaign(campaignCount.data().count);
+            
+        }
+         const fetchorganizationCount=async ()=>{
+            let campaignCount= await getCountFromServer(collection(db,"users"))
+            setOrganization(campaignCount.data().count);
             
         }
     return(
@@ -61,7 +68,7 @@ export default function DashBoard() {
             </div>
             <div className="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
               <div className="featured-block d-flex justify-content-center align-items-center">
-                <Link to="/admin/managecampaign/" className="nav-link">
+               <Link to="/campaign/" className="nav-link">
                  <p className="featured-block-text">
                    Organization
                   </p>
@@ -70,6 +77,7 @@ export default function DashBoard() {
                     className="featured-block-image img-fluid"
                     alt=""
                   />
+                   <h1>{organization}</h1>
                   <i className="btn btn-Light">Read more</i> 
                   </Link>
               </div>

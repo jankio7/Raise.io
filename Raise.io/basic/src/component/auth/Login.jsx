@@ -62,7 +62,7 @@ export default function Login(){
              nav("/organiser")
             }
             else{
-             nav("/user")
+             nav("/")
             } 
 
           }else{

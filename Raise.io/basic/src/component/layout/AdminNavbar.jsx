@@ -74,7 +74,7 @@ export default function AdminNavbar(){
                  <Link className="navbar-brand" to="index.html">
                    <span className="flaticon-pawprint-1 mr-2" />
                    <img
-                        src="assets/images/logo.png"
+                        src="/assets/images/logo.png"
                         className="logo img-fluid"
                         // alt="Kind Heart Charity"
                       />

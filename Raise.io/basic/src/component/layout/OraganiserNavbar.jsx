@@ -96,8 +96,8 @@ export default function OrganiserNavabr(){
                  <div className="collapse navbar-collapse " id="ftco-nav">
                    <ul className="navbar-nav ms-auto">
                      <li className="nav-item active">
-                       <Link to="register" className="nav-link">
-                         Register
+                       <Link to="/organiser" className="nav-link">
+                         Home
                        </Link>
                      </li>
                        <li className="nav-item dropdown">
@@ -141,7 +141,7 @@ export default function OrganiserNavabr(){
                      </li> */}
                     
                      <li className="nav-item">
-                       <Link to="" className="nav-link">
+                       <Link to="donation2" className="nav-link">
                           View Donation
                        </Link>
                       </li>

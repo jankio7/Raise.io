@@ -7,7 +7,7 @@ import { toast } from "react-toastify"
 import { Link } from "react-router-dom"
 
 export default function Campaign(){
-    const [load, setLoad]=useState(true)
+        const [load, setLoad]=useState(true)
         const [AllCampaign,setAllCampaign]=useState([])
     
         const fetchData=()=>{

@@ -6,13 +6,15 @@ import Swal from "sweetalert2"
 import { Link } from "react-router-dom"
 import ResponsivePaginationComponent from "react-responsive-pagination"
 import 'react-responsive-pagination/themes/classic-light-dark.css';
+import { RingLoader } from "react-spinners"
 export default function Campaign1(){
-   
+       const [load, setLoad]=useState(true)
       const [AllCampaign,setCampaign]=useState([])
-      const [currentPage, setCurrentPage] = useState(3);
-          const [totalPages, setTotalPages] = useState(3);
+      const [currentPage, setCurrentPage] = useState(1);
+          const [totalPages, setTotalPages] = useState(1);
           const limit=4
               // useEffect(fn, [dependency])
+              
               useEffect(()=>{
                   fetchData()
               },[])
@@ -27,7 +29,7 @@ export default function Campaign1(){
              
              return{id:el.id,...el.data()}
             }))
-           
+           setLoad(false)
             setTotalPages(Math.ceil(campaignCol.docs.length/limit));
          })
           
@@ -91,31 +93,31 @@ export default function Campaign1(){
                         <th scope="col">S.no</th>
                         <th scope="col">Title</th>
                          <th scope="col">Image</th>
-                        <th scope="col">Category</th>
+                        {/* <th scope="col">Category</th> */}
                         <th scope="col">Description</th>
                         <th scope="col">Total Amount</th>
                         <th scope="col">Start Date</th>
-                        <th scope="col">End Date</th>
+                        
                         <th scope="col">Actions</th>
                         
                         
                       </tr>
                     </thead>
                   
-                                                {AllCampaign?.slice((currentPage-1)*limit, ((currentPage-1)*limit)+limit)?.map((el, index)=>{
-                                return(
+                        {AllCampaign?.slice((currentPage-1)*limit, ((currentPage-1)*limit)+limit)?.map((el, index)=>{
+                            return(
 
                         <tbody>
                               <tr>
                                   <th scope="row">{index+1}</th>
                                    <td>{el.campaigntitle}</td>
                                     <td><img className="img-fluid w-20 h-20 " src={el.image}/></td>
-                                    <td>{el.type}</td>
+                                    {/* <td>{el.type}</td> */}
                                   <td>{el.description}</td>
-                                  <td>{el.totalamount}</td>
+                                  <td>{el.goalAmount}</td>
                                   <td>{el.startdate}</td>
-                                  <td>{el.enddate}</td>
-                                  <td className="">{el.Actions}
+                                
+                                  <td className="">
                                    <th>   <Link to={"/organiser/campaign/update/"+el.id} className="btn btn-success my-1">Edit</Link></th>
                                             <th>  <button className="btn btn-danger" onClick={()=>{
                                                 DeleteCampaign(el.id)

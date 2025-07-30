@@ -4,9 +4,11 @@ import { useState } from "react"
 import { toast } from "react-toastify"
 import axios from "axios"
 import { db } from "../../Firebase"
+import { RingLoader } from "react-spinners"
 
    
 export default function AddCategory(){
+     const [load, setLoad]=useState(true)
     const [categoryname,setCategoryName]=useState("")
     const [poster,setPoster]=useState({})
     const [posterName, setPosterName]=useState("")
@@ -25,7 +27,9 @@ export default function AddCategory(){
               toast.error("Error uploading image:", error.message);
             }
           }
-    
+          setLoad(false)
+             
+         
         const changeposter=(e)=>{
           setPosterName(e.target.value)
           setPoster(e.target.files[0]);
@@ -53,6 +57,9 @@ export default function AddCategory(){
     return(
         <>
           <div className="col-lg-5 col-12 mx-auto" >
+             {load?
+                    <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                : 
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -100,7 +107,8 @@ export default function AddCategory(){
                 </button>
                 
               </form>
-            </div>
+            }
+          </div>
           
     
  

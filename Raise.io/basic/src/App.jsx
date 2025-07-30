@@ -33,6 +33,8 @@ import UserRegister from "./component/user/UserRegister";
 import OrganiserRegister from "./component/organiser/OrganiserRegister";
 import Payment from "./component/user/Payment";
 import ManagePayment from "./component/user/ManagePayments";
+import UserViewDonation from "./component/user/UserViewDonation";
+import OrganiserViewDonation from "./component/organiser/OrganiserViewDonation";
 
 
 
@@ -52,15 +54,15 @@ function App() {
                 <Route path="" element={<About/>}/>
                 <Route path="about" element={<About2 />}/>
                 <Route path="causes" element={<Causes/>}/>
-                <Route path="volunter" element={<Volunter/>}/>
-                <Route path="news" element={<News1/>}/>
-                <Route path="contact" element={<Contact/>}/>
                 <Route path="donate" element={<Donate />} />
-                <Route path="news1" element={<News />} />
-                <Route path="detail1" element={<Newsdetail />} />
                 <Route path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
                 <Route path="organization" element={<Organization/>}/>
+                <Route path="category" element={<Category/>}/>
+                <Route path="category/:catId" element={<Category/>}/>
+                <Route path="donate/:campaignId/:organiserId" element={<Payment/>}/>
+                <Route path="managepayment" element={<ManagePayment/>}/>
+                <Route path="donation3" element={<UserViewDonation/>}/>
               </Route>
 
               <Route path="/admin" element={<AdminLayout/>}>
@@ -80,15 +82,11 @@ function App() {
                 {/* <Route path="campaign12" element={<Campaign1/>}/> */}
                 <Route path="campaign12" element={<Campaign1/>}/>
                 <Route path="campaign/update/:id" element={<UpdateCampaign/>}/>
+                <Route path="donation2" element={<OrganiserViewDonation/>}/>
               </Route>
 
-              <Route path="/user" element={<UserLayout/>}>
-                <Route path="register" element={<UserRegister/>}/>
-                <Route path="category" element={<Category/>}/>
-                <Route path="donate/:campaignId/:organiserId" element={<Payment/>}/>
-                <Route path="managepayment" element={<ManagePayment/>}/>
+               
                 
-              </Route>
                
               
               <Route path="/" element={<Error/>}/>

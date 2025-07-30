@@ -5,25 +5,28 @@ import { toast } from "react-toastify";
 import { auth,db } from "../../Firebase";
 import { doc , setDoc , Timestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { RingLoader } from "react-spinners";
 
 export default function AddRegister(){
+        
         const [fullname,setFullName]=useState("")
         const [email,setEmail]=useState("")
         const [password,setPassword]=useState("")
         const [contact,setContact]=useState("")
         const [address,setAddress]=useState("")
 
-       const handleForm=(e)=>{
-        e.preventDefault()
-        createUserWithEmailAndPassword(auth,email,password)
-         .then((userCred)=>{
-          let userId=userCred.user.uid
-          saveData(userId)
-         })
-         .catch((error)=>{
-          toast.error(error.message)
-         })
-       } 
+      const handleForm=(e)=>{
+          e.preventDefault()
+          createUserWithEmailAndPassword(auth,email,password)
+          .then((userCred)=>{
+            let userId=userCred.user.uid
+            saveData(userId)
+          })
+          .catch((error)=>{
+            toast.error(error.message)
+          })
+        setLoad(false)   
+      } 
         
        const saveData=async(userId)=>{
         try{
@@ -65,7 +68,11 @@ export default function AddRegister(){
         return(
         <>
         
-        <div className="col-lg-5 col-12 mx-auto" mr-5>
+        <div className="col-lg-5 col-12 mx-auto" >
+            {load?
+            <RingLoader color="#00BD56" size={30} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+            :
+          
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -141,7 +148,8 @@ export default function AddRegister(){
                 </button>
                 
               </form>
-            </div>
+           }
+          </div>
           
     
  

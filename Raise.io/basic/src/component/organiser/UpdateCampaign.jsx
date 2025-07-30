@@ -1,4 +1,4 @@
-import { doc, getDoc, Timestamp } from "firebase/firestore"
+import { collection, doc, getDoc, onSnapshot, query, Timestamp, updateDoc } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { toast } from "react-toastify"
@@ -14,7 +14,31 @@ export default function UpdateCampaign(){
     const [enddate,setEndDate]=useState("")
     const [image,setImage]=useState("")
     const [imagename,setImageName]=useState("")
+    const [categoryId, setCategoryId]=useState("")
     const [previousImg,setPreviousImg]=useState("")
+      const [AllCategory,setAllCategory]=useState([])
+         const fetchCategoryData=()=>{
+                    const q=query(collection(db,"category")
+                   //  where("type","==","Education")
+               )
+                           onSnapshot(q,(categoryData)=>{
+                  
+                    setAllCategory(
+                       categoryData.docs.map((el)=>{
+                      
+                      return{id:el.id,...el.data()}
+                     }))
+                    setLoad(false)
+                    
+                  })
+                   
+               }
+           
+               useEffect(()=>{
+                   fetchCategoryData()
+                  
+                   
+               },[])
     useEffect(()=>
     {
         fetchData()
@@ -24,12 +48,11 @@ export default function UpdateCampaign(){
         let campaigndoc=await getDoc(doc(db,"campaign",id))
         let campaignData=campaigndoc.data()
         setCampaignTitle(campaignData.campaigntitle)
-        setType(campaignData.type)
+        setCategoryId(campaignData.categoryId)
         setDescription(campaignData.description)
-        setTotalAmount(campaignData.totalamount)
+        setTotalAmount(campaignData.goalAmount)
         setStartDate(campaignData.startdate)
-        setEndDate(campaignData.enddate)
-        setPreviousImg(campaignData.previousImg)
+        setPreviousImg(campaignData.image)
 
     }
     const changeImage=(e)=>{
@@ -61,18 +84,15 @@ export default function UpdateCampaign(){
         try{
             let data={
                 campaigntitle,
-                type,
                 description,
-                totalamount,
-                startdate,
-                enddate,
-                image:imageUrl,
-                status:true,
-                credetAt:Timestamp.now()
+                 image:imageUrl,
+                goalamount:totalamount,
+                categoryId,
+                startdate
             }
             await updateDoc(doc(db,"campaign",id),data)
             toast.success("Data Updated Successfully!")
-            nav("/organiser/campaign/update/")
+            nav("/organiser/campaign12")
         }
         catch(err)
         {
@@ -90,7 +110,7 @@ export default function UpdateCampaign(){
                 action="#"
                 method="post"
                 role="form"
-                // onSubmit={handleForm}
+                onSubmit={handleForm}
               >
                 <h2 className=" my-3 justify-content:center">Update Campaign</h2>
                 
@@ -114,19 +134,19 @@ export default function UpdateCampaign(){
               
                 </div>
                 
-                <select
+               <select
                      className="form-control"
-                     valur={type}
+                     value={categoryId}
                      onChange={(e)=>{
-                        setType(e.target.value)
+                        setCategoryId(e.target.value)
                      }}
                  >
                  <option disabled selected value={("")}>Choose one</option>
-                 <option>Health</option>
-                 <option>Education</option>
-                 <option>Food</option>
-                 <option>Cloth</option>
+                 {AllCategory?.map((el,index)=>(
+                 <option value={el?.id}>{el?.categoryname}</option>
+                ))}
                 </select>
+                 
                  
                  <input
                   type="text"
@@ -164,7 +184,7 @@ export default function UpdateCampaign(){
                   }}
                 />
                   <input
-                  type="tel"
+                  type="date"
                   name="subject"
                   id="subject"
                   
@@ -175,18 +195,7 @@ export default function UpdateCampaign(){
                     setStartDate(e.target.value)
                   }}
                 />
-                  <input
-                  type="tel"
-                  name="subject"
-                  id="subject"
-                  
-                  className="form-control"
-                  placeholder="End Date"
-                  value={enddate}
-                  onChange={(e)=>{
-                    setEndDate(e.target.value)
-                  }}
-                />
+                 
                 
                 
                 <button type="submit" className="form-control">
