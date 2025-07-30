@@ -73,6 +73,12 @@ return(
   >
     <div className="container ">
       <Link className="navbar-brand" to="index.html">
+      <img
+  src="/assets/images/logo.png"
+  className="logo img-fluid"
+  alt="Kind Heart Charity"
+/>
+
         <span className="flaticon-pawprint-1 mr-2" />
         Raise.io
       </Link>
@@ -87,9 +93,9 @@ return(
       >
         <span className="fa fa-bars  " /> Menu
       </button>
-      <div className=" navbar-collapse justify-content: center  " id="ftco-nav">
-        <ul className="navbar-nav justify-content:center ">
-          <li className="nav-item ">
+      <div className=" collapse navbar-collapse  " id="navbarNav">
+        <ul className="navbar-nav ms-auto ">
+          <li className="nav-item" >
             <Link to="/" className="nav-link">
               Home
             </Link>
@@ -111,32 +117,32 @@ return(
               Volunter
             </Link>
                     </li>
-                    <li className="nav-item dropdown">
-            <Link
-              className="nav-link click-scroll dropdown-toggle"
-              to="news"
-              id="navbarLightDropdownMenuLink"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              News
-            </Link>
-            <ul
-              className="dropdown-menu dropdown-menu-light"
-              aria-labelledby="navbarLightDropdownMenuLink"
-            >
-              <li>
-                <Link className="dropdown-item" to="/news1">
-                  News Listing
+             <li className="nav-item dropdown">
+                <Link
+                  className="nav-link click-scroll dropdown-toggle"
+                  to="news"
+                  id="navbarLightDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  News
                 </Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/detail1">
-                  News Detail
-                </Link>
-              </li>
-            </ul>
+                <ul
+                  className="dropdown-menu dropdown-menu-light"
+                  aria-labelledby="navbarLightDropdownMenuLink"
+                >
+                  <li>
+                    <Link className="dropdown-item" to="/news1">
+                      News Listing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/detail1">
+                      News Detail
+                    </Link>
+                  </li>
+                </ul>
           </li>
 
           
@@ -145,9 +151,14 @@ return(
               Contact
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to={"/donate"} className="nav-link">
               Donate
+            </Link>
+          </li> */}
+          <li className="nav-item">
+            <Link to={"/organization"} className="nav-link">
+              Organization
             </Link>
           </li>
           {
@@ -164,11 +175,11 @@ return(
             </Link>
           </li>
           }
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to={"/organization"} className="nav-link">
               Organization
             </Link>
-          </li>
+          </li> */}
           {/* <li className="nav-item">
             <Link to={"/register"} className="nav-link">
               Register

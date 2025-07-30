@@ -1,78 +1,83 @@
-import { addDoc, collection , Timestamp ,updateDoc} from "firebase/firestore"
+import { addDoc, collection , doc, getDoc, Timestamp ,updateDoc} from "firebase/firestore"
 import { useState ,useEffect} from "react"
 
 import { toast } from "react-toastify"
 import axios from "axios"
 import { db } from "../../Firebase"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
    
 export default function UpdateCategory(){
-    const [categoryname,setCategoryName]=useState("")
-    const [poster,setPoster]=useState({})
-    const [posterName, setPosterName]=useState("")
+     const {id}=useParams()
+     const [categoryname,setCategoryName]=useState("")
+     const [poster,setPoster]=useState({})
+     const [posterName, setPosterName]=useState("")
+     const [previousImg,setPreviousImg]=useState("")
     useEffect(()=>{
             fetchData()
         },[])
         const fetchData=async ()=>{
-           let categoryDoc=await getDoc(doc(db, "breeds", id))
+           let categoryDoc=await getDoc(doc(db, "category", id))
            let categoryData=categoryDoc.data()
-           setCategoryName(categoryData.categoryName)
-          
-           setType(breedData.type)
-           setPreviousImg(breedData.image)
+          //  console.log(categoryData);
+           
+           setCategoryName(categoryData.categoryname)
+           setPreviousImg(categoryData.poster)
         }
-    const handleForm= async (e)=>{
-     e.preventDefault()
-          if(!!poster){
-      const formData = new FormData();
-      formData.append("file",poster);
-      formData.append("upload_preset","images");9
-          try {
-           const response = await axios.post(
-                `https://api.cloudinary.com/v1_1/dsc2mxwti/image/upload`, 
-                formData
+            const handleForm= async (e)=>{
+              e.preventDefault()
+                    if(!!posterName){
+                const formData = new FormData();
+                formData.append("file",poster);
+                formData.append("upload_preset","images");
+                    try {
+                    const response = await axios.post(
+                          `https://api.cloudinary.com/v1_1/dsc2mxwti/image/upload`, 
+                          formData
                             );
-            saveData(response.data.secure_url)
-           } catch (error) {
-              toast.error("Error uploading image:", error.message);
+                      saveData(response.data.secure_url)
+                    } catch (error) {
+                        toast.error("Error uploading image:", error.message);
+                      }
+                    }else{
+                      saveData(previousImg)
+                    }
+             }
+            const changeposter=(e)=>{
+              setPosterName(e.target.value)
+              setPoster(e.target.files[0]);
             }
-          }else{
-            saveData(previousImg)
-          }
-    const changeposter=(e)=>{
-      setPosterName(e.target.value)
-      setPoster(e.target.files[0]);
-    }
-     const nav=useNavigate()
-    const saveData=async (posterUrl)=>{
-      try {
-        let data={
-          categoryname,
-          poster:posterUrl,
-         
-          status:true,
-          createdAt:Timestamp.now()
-        }
-       await updateDoc(doc(db, "breeds", id), data)
-                  toast.success("Breed updated successfully!")
-                  nav("/admin/breed/manage")
-      }
-      catch(err){
-        toast.error(err.messsage)
-      }
-    }
+            const nav=useNavigate()
+            const saveData=async (posterUrl)=>{
+              try {
+                let data={
+                  categoryname,
+                  poster:posterUrl,
+                  status:true,
+                  createdAt:Timestamp.now()
+                }
+                // console.log(data);
+                
+                 await updateDoc(doc(db, "category", id), data)
+                      toast.success("category updated successfully!")
+                      nav("/admin/managecategory")
+                  }
+                  catch(err){
+                      toast.error(err.messsage)
+                   }
+            }
 
     return(
         <>
-          <div className="col-lg-5 col-12 mx-auto" >
+           <div className="col-lg-5 col-12 mx-auto" >
               <form
-                 method="POST"
-                    id="contactForm"
-                    name="contactForm"
-                    className="contactForm"
-                    onSubmit={handleForm}
+                className="custom-form contact-form my-5 justify-content:center"
+                action="#"
+                method="post"
+                role="form"
+                onSubmit={handleForm}
               >
-                <h2 className=" my-3 justify-content:center">Add Category</h2>
+                <h2 className=" my-3 justify-content:center">Update  Category</h2>
                 
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-12">
@@ -113,10 +118,10 @@ export default function UpdateCategory(){
                 
               </form>
             </div>
-          
+           
     
  
            
         </>
     )
-}}
+}

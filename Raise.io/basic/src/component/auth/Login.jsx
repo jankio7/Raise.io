@@ -3,11 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider} from "firebase/auth";
 import {auth , db} from "../../Firebase";
-import {doc , getDoc} from "firebase/firestore"
+import {doc , getDoc, setDoc, Timestamp} from "firebase/firestore"
 
 export default function Login(){
         const [email,setEmail]=useState("")
         const [password,setPassword]=useState("")
+
+        const signInWithGoogle=()=>{
+             let provider=new GoogleAuthProvider()
+             signInWithPopup(auth, provider)
+             .then((userCred)=>{
+                 let userId=userCred.user.uid;
+                getUserData(userId)
+             })
+             .catch((err)=>{
+               toast.error(err.message)
+             })
+           }
        const changeEmail=(e)=>{
           
                setEmail(e.target.value)
@@ -16,8 +28,12 @@ export default function Login(){
          let nav=useNavigate() //hook which redirect from one page to other
            const handleForm=(e)=>{
              e.preventDefault() //stops form from reloading
+            //  console.log(234567);
+             
              signInWithEmailAndPassword(auth, email, password)
              .then((userCred)=>{
+              console.log(userCred);
+              
                // console.log("sign in", userCred.user.uid);
                let userId=userCred.user.uid
                getUserData(userId)
@@ -32,7 +48,8 @@ export default function Login(){
             let userDoc=await getDoc(doc(db,"users", userId))
            //  console.log(userDoc.data());
             let userData=userDoc.data()
-            sessionStorage.setItem("name", userData?.name)
+             if(userData?.status){
+            sessionStorage.setItem("name", userData?.fullname)
             sessionStorage.setItem("email", userData?.email)
             sessionStorage.setItem("userType", userData?.userType)
             sessionStorage.setItem("userId", userId)
@@ -40,22 +57,20 @@ export default function Login(){
             toast.success("Login successfully")
             if(userData?.userType==1){
              nav("/admin")
-            }else{
-             nav("/")
             }
-           }
-         
-           const signInGoogle=()=>{
-             let provider=new GoogleAuthProvider()
-             signInWithPopup(auth, provider)
-             .then((userCred)=>{
-                 let userId=userCred.user.uid;
-                getUserData(userId)
-             })
-             .catch((err)=>{
-               toast.error(err.message)
-             })
-           }
+            else if(userData?.userType==2){
+             nav("/organiser")
+            }
+            else{
+             nav("/user")
+            } 
+
+          }else{
+            toast.error("Account is blocked")
+          }
+            
+            } 
+          
            return(
         <> 
 
@@ -102,11 +117,11 @@ export default function Login(){
                 
                 
                 <button type="submit" className="btn btn-primary my-2 col-md-16 col-md-6 mx-auto;
-                   " onClick={signInWithEmailAndPassword}>
+                   ">
                   Submit 
                 </button>     
                 <br/>
-              <button className="btn btn-danger col-md-6 col-md-6" onClick={signInGoogle}>Sign in with Google</button>
+              <button type="button" className="btn btn-danger col-md-6 col-md-6" onClick={signInWithGoogle}>Sign in with Google</button>
                   <div className="my-3">Don't have an account? <Link to={"/register"}>Register Here!</Link></div>
                 </form>   
             </div>

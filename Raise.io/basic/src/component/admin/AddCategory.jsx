@@ -11,14 +11,14 @@ export default function AddCategory(){
     const [poster,setPoster]=useState({})
     const [posterName, setPosterName]=useState("")
     const handleForm=async (e)=>{
-     e.preventDefault()
-      const formData = new FormData();
-      formData.append("file",poster);
-      formData.append("upload_preset","images");9
-          try {
-           const response = await axios.post(
-                `https://api.cloudinary.com/v1_1/dsc2mxwti/image/upload`, 
-                formData
+      e.preventDefault()
+          const formData = new FormData();
+          formData.append("file",poster);
+          formData.append("upload_preset","images");9
+            try {
+            const response = await axios.post(
+                  `https://api.cloudinary.com/v1_1/dsc2mxwti/image/upload`, 
+                   formData
                             );
             saveData(response.data.secure_url)
            } catch (error) {
@@ -26,33 +26,33 @@ export default function AddCategory(){
             }
           }
     
-    const changeposter=(e)=>{
-      setPosterName(e.target.value)
-      setPoster(e.target.files[0]);
-    }
-    const saveData=async (posterUrl)=>{
-      try {
-        let data={
-          categoryname,
-          poster:posterUrl,
-         
-          status:true,
-          createdAt:Timestamp.now()
+        const changeposter=(e)=>{
+          setPosterName(e.target.value)
+          setPoster(e.target.files[0]);
         }
-        await addDoc(collection(db,"category"),data)
-         toast.success("Category added successfully!")
-        setCategoryName("")
-        setPosterName("")
-        setPoster("")
-      }
-      catch(err){
-        toast.error(err.messsage)
-      }
-    }
+    const saveData=async (posterUrl)=>{
+       try {
+        let data={
+            categoryname,
+            poster:posterUrl,
+          
+            status:true,
+            createdAt:Timestamp.now()
+          }
+          await addDoc(collection(db,"category"),data)
+          toast.success("Category added successfully!")
+          setCategoryName("")
+          setPosterName("")
+          setPoster("")
+         }
+            catch(err){
+              toast.error(err.messsage)
+            }
+          }
 
     return(
         <>
-          <div className="col-lg-5 col-12 mx-auto" mr-5>
+          <div className="col-lg-5 col-12 mx-auto" >
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"

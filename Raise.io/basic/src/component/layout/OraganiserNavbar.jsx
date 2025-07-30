@@ -73,6 +73,12 @@ export default function OrganiserNavabr(){
              >
                <div className="container mx-auto">
                  <Link className="navbar-brand" to="index.html">
+                 <img
+                        src="/assets/images/logo.png"
+                        className="logo img-fluid"
+                        alt="Kind Heart Charity"
+                      />
+
                    <span className="flaticon-pawprint-1 mr-2" />
                    Raise.io
                  </Link>
@@ -88,26 +94,54 @@ export default function OrganiserNavabr(){
                    <span className="fa fa-bars" /> Menu
                  </button>
                  <div className="collapse navbar-collapse " id="ftco-nav">
-                   <ul className="navbar-nav ml-auto justify-content:felx-end">
+                   <ul className="navbar-nav ms-auto">
                      <li className="nav-item active">
-                       <Link to="/" className="nav-link">
+                       <Link to="register" className="nav-link">
                          Register
                        </Link>
                      </li>
-                     <li className="nav-item">
-                       <Link to={"campaign"} className="nav-link">
-                         Campaign
+                       <li className="nav-item dropdown">
+                    <Link
+                      className="nav-link click-scroll dropdown-toggle"
+                      to="campaign"
+                      id="navbarLightDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      campaign
+                    </Link>
+                    <ul
+                      className="dropdown-menu dropdown-menu-light"
+                      aria-labelledby="navbarLightDropdownMenuLink"
+                    >
+                      <li>
+                        <Link className="dropdown-item" to="campaign">
+                          Add Campaign
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="campaign12">
+                          Manage Campaign
+                        </Link>
+                      </li>
+                      </ul>
+                  </li>                      
+
+                     {/* <li className="nav-item">
+                       <Link to="campaign" className="nav-link">
+                        Add Campaign
                        </Link>
                      </li>
                  
                      <li className="nav-item">
-                       <a href="/causes" className="nav-link">
-                         Approval
-                       </a>
-                     </li>
+                       <Link to="campaign12" className="nav-link">
+                         Manage Campaign
+                       </Link>
+                     </li> */}
                     
                      <li className="nav-item">
-                       <Link to={"/volunter"} className="nav-link">
+                       <Link to="" className="nav-link">
                           View Donation
                        </Link>
                       </li>

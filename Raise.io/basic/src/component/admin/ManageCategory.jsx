@@ -113,13 +113,14 @@ export default function ManageCategory(){
                                         <th scope="row">{index+1}</th>    
                                         <td>{el.categoryname}</td>
                                         <td><img className="img-fluid w-80 h-80" src={el.poster}/></td>
-                                         <td className="">{el.Actions}</td>
-                                         <td>
-                                            <Link to={"/admin/category/"+el.id} className="btn btn-success my-1">Edit</Link>
-                                            <button className="btn btn-danger" onClick={()=>{
+                                         <td className="">{el.Actions}
+                                        
+                                           <th> <Link to={"/admin/category/update/"+el.id} className="btn btn-success ">Edit</Link></th>
+                                           <th> <button className="btn btn-danger" onClick={()=>{
                                             DeleteCategory(el.id)
-                                         }}>Delete</button>
+                                         }}>Delete</button></th>
                                          </td>
+                                         
                                     </tr>                               
                             </tbody>
                          })

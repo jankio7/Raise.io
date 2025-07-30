@@ -35,7 +35,7 @@ export default function UserNavabr(){
              <div className="container">
                <div className="row">
                  <div className="col-lg-8 col-12 d-flex flex-wrap">
-                   <p className="d-flex me-4 mb-0">
+                   <p className="d-flex me-1 mb-0">
                      <i className="bi-geo-alt me-2" />
                      Ghurial,jalandhar (India)
                    </p>
@@ -73,6 +73,12 @@ export default function UserNavabr(){
              >
                <div className="container mx-auto">
                  <Link className="navbar-brand" to="index.html">
+                 <img
+                        src="/assets/images/logo.png"
+                        className="logo img-fluid"
+                        alt="Kind Heart Charity"
+                      />
+
                    <span className="flaticon-pawprint-1 mr-2" />
                    Raise.io
                  </Link>
@@ -88,31 +94,31 @@ export default function UserNavabr(){
                    <span className="fa fa-bars" /> Menu
                  </button>
                  <div className="collapse navbar-collapse " id="ftco-nav">
-                   <ul className="navbar-nav ml-auto justify-content:felx-end">
+                   <ul className="navbar-nav ms-auto">
                      <li className="nav-item active">
                        <Link to="register" className="nav-link">
                          Register
                        </Link>
                      </li>
                      <li className="nav-item">
-                       <Link to={"campaign"} className="nav-link">
+                       <Link to="/user/category" className="nav-link">
                          Category
                        </Link>
                      </li>
                  
                      <li className="nav-item">
-                       <a href="/causes" className="nav-link">
+                       <Link to="" className="nav-link">
                          Campaign
-                       </a>
+                       </Link>
                      </li>
                     
                      <li className="nav-item">
-                       <Link to={"/volunter"} className="nav-link">
+                       <Link to="donate2" className="nav-link">
                           Donate
                        </Link>
                       </li>
                        <li className="nav-item">
-                       <Link to={"/volunter"} className="nav-link">
+                       <Link to="managepayment" className="nav-link">
                           View Donation
                        </Link>
                       </li>
@@ -121,13 +127,13 @@ export default function UserNavabr(){
                      {
                        isLogin?
                        <li className="nav-item">
-                       <Link to={"#"}  onClick={logout} className="nav-link">
+                       <Link to=""  onClick={logout} className="nav-link">
                          Logout
                        </Link>
                        </li>
                      :
                       <li className="nav-item">
-                       <Link to={"/login"} className="nav-link">
+                       <Link to="" className="nav-link">
                          Login
                        </Link>
                      </li>

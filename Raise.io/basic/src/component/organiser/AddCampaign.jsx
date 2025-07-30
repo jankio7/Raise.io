@@ -1,6 +1,6 @@
 
-import { useState } from "react"
-import { addDoc, collection, Timestamp } from "firebase/firestore"
+import { useEffect, useState } from "react"
+import { addDoc, collection, onSnapshot, query, Timestamp } from "firebase/firestore"
 // import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
 import axios from "axios"
@@ -16,6 +16,31 @@ export default function AddCampaign(){
      const [totalamount,setTotalAmount]=useState("")
      const [startdate,setStartDate]=useState("")
      const [enddate,setEndDate]=useState("")
+     const [categoryId, setCategoryId]=useState("")
+       const [AllCategory,setCategory]=useState([])
+     
+         const fetchData=()=>{
+              const q=query(collection(db,"category")
+             //  where("type","==","Education")
+         )
+                     onSnapshot(q,(categoryData)=>{
+            
+              setCategory(
+                 categoryData.docs.map((el)=>{
+                
+                return{id:el.id,...el.data()}
+               }))
+              setLoad(false)
+              
+            })
+             
+         }
+     
+         useEffect(()=>{
+             fetchData()
+            
+             
+         },[])
       const handleForm=async (e)=>{
      e.preventDefault()
       const formData = new FormData();
@@ -43,13 +68,15 @@ export default function AddCampaign(){
             //insertion 
             let data={
                 campaigntitle,
-                type,
+                
                 description,
                 image:imageUrl,
-                totalamount,
+                goalAmount:totalamount,
+                organiserId:sessionStorage.getItem("userId"),
+                categoryId,
+                moneyRaised:0,
                 startdate,
-                enddate,
-                status:true,
+                status:false,
                 createdAt:Timestamp.now()
             }
             // console.log(data);
@@ -57,11 +84,10 @@ export default function AddCampaign(){
             await addDoc(collection(db, "campaign"), data)
             toast.success("Campaign added successfully!")
             setCampaignTitle("")
-            setType("")
             setDescription("")
             setImage({})
             setImageName("")
-             
+             setCategoryId("")
             setTotalAmount("")
             setStartDate("")
             setEndDate("")
@@ -104,16 +130,15 @@ export default function AddCampaign(){
                 
                 <select
                      className="form-control"
-                     valur={type}
+                     value={categoryId}
                      onChange={(e)=>{
-                        setType(e.target.value)
+                        setCategoryId(e.target.value)
                      }}
                  >
                  <option disabled selected value={("")}>Choose one</option>
-                 <option>Health</option>
-                 <option>Education</option>
-                 <option>Food</option>
-                 <option>Cloth</option>
+                 {AllCategory?.map((el,index)=>(
+                 <option value={el?.id}>{el?.categoryname}</option>
+                ))}
                 </select>
                  
                  <input
@@ -152,7 +177,7 @@ export default function AddCampaign(){
                   }}
                 />
                   <input
-                  type="tel"
+                  type="date"
                   name="subject"
                   id="subject"
                   
@@ -163,19 +188,7 @@ export default function AddCampaign(){
                     setStartDate(e.target.value)
                   }}
                 />
-                  <input
-                  type="tel"
-                  name="subject"
-                  id="subject"
-                  
-                  className="form-control"
-                  placeholder="End Date"
-                  value={enddate}
-                  onChange={(e)=>{
-                    setEndDate(e.target.value)
-                  }}
-                />
-                
+              
                 
                 <button type="submit" className="form-control">
                   Submit 

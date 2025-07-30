@@ -14,8 +14,10 @@
     "firebase": "^11.10.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-responsive-pagination": "^2.11.1",
     "react-router-dom": "^7.6.3",
     "react-spinners": "^0.17.0",
+    "react-switch": "^7.1.0",
     "react-toastify": "^11.0.5",
     "sweetalert2": "^11.22.2"
   },

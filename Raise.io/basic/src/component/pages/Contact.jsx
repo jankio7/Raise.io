@@ -9,7 +9,7 @@ export default function Contact(){
                 <h2>Raise.io</h2>
                 <div className="contact-image-wrap d-flex flex-wrap">
                   <img
-                    src="/assets/images/avatar/slide/boy.jpg"
+                    src="/assets/images/boy.jpg"
                     className="img-fluid avatar-image"
                     alt=""
                   />

@@ -6,11 +6,13 @@ import { auth,db } from "../../Firebase";
 import { doc , setDoc , Timestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-export default function Register(){
+export default function OrganiserRegister(){
         const [fullname,setFullName]=useState("")
         const [email,setEmail]=useState("")
         const [password,setPassword]=useState("")
         const [contact,setContact]=useState("")
+        const [gstin,setGstIn]=useState("")
+        const [about,setAbout]=useState("")
         const [address,setAddress]=useState("")
 
        const handleForm=(e)=>{
@@ -34,7 +36,7 @@ export default function Register(){
             contact:contact,
             address:address,
             userId:userId,
-            userType:3,
+            userType:2,
             status:true,
             createAt:Timestamp.now()
           }
@@ -133,6 +135,30 @@ export default function Register(){
                   value={contact}
                   onChange={(e)=>{
                     setContact(e.target.value)
+                  }}
+                />
+                 <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  
+                  className="form-control"
+                  placeholder="GSTIN"
+                  value={gstin}
+                  onChange={(e)=>{
+                    setGstIn(e.target.value)
+                  }}
+                />
+                 <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  
+                  className="form-control"
+                  placeholder="About"
+                  value={about}
+                  onChange={(e)=>{
+                    setAbout(e.target.value)
                   }}
                 />
                  <input

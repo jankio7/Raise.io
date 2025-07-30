@@ -21,7 +21,18 @@ import AddCategory from "./component/admin/AddCategory";
 import AddCampaign from "./component/organiser/AddCampaign";
 import AddRegister from "./component/user/AddRegister";
 import ManageCategory from "./component/admin/ManageCategory";
+import DashBoard from "./component/admin/DashBoard";
 import UpdateCategory from "./component/admin/UpdateCategory";
+import ManageCampaign from "./component/admin/ManageCampaign";
+import DashBoardorg from "./component/organiser/DashBoardorg";
+import Campaign1 from "./component/organiser/Campaign1";
+import Category from "./component/user/category";
+import ViewDonation from "./component/admin/ViewDonation";
+import UpdateCampaign from "./component/organiser/UpdateCampaign";
+import UserRegister from "./component/user/UserRegister";
+import OrganiserRegister from "./component/organiser/OrganiserRegister";
+import Payment from "./component/user/Payment";
+import ManagePayment from "./component/user/ManagePayments";
 
 
 
@@ -53,17 +64,30 @@ function App() {
               </Route>
 
               <Route path="/admin" element={<AdminLayout/>}>
+                <Route index element={<DashBoard/>}/>
                 <Route path="category" element={<AddCategory/>}/>
                 <Route path="managecategory" element={<ManageCategory/>}/>
-                <Route path="category/:id" element={<UpdateCategory/>}/>
+                <Route path="category/update/:id" element={<UpdateCategory/>}/>
+                <Route path="managecampaign" element={<ManageCampaign/>}/>
+                <Route path="viewdonation" element={<ViewDonation/>}/>
               </Route>
  
               <Route path="/organiser" element={<OrganiserLayout/>} >
+                <Route index element={<DashBoardorg/>}/>
+                <Route path="register" element={<OrganiserRegister/>}/>
                 <Route path="campaign" element={<AddCampaign/>}/>
+                {/* <Route path="campaign1" element={<Campaign/>}/> */}
+                {/* <Route path="campaign12" element={<Campaign1/>}/> */}
+                <Route path="campaign12" element={<Campaign1/>}/>
+                <Route path="campaign/update/:id" element={<UpdateCampaign/>}/>
               </Route>
 
               <Route path="/user" element={<UserLayout/>}>
-                <Route path="register" element={<AddRegister/>}/>
+                <Route path="register" element={<UserRegister/>}/>
+                <Route path="category" element={<Category/>}/>
+                <Route path="donate/:campaignId/:organiserId" element={<Payment/>}/>
+                <Route path="managepayment" element={<ManagePayment/>}/>
+                
               </Route>
                
               

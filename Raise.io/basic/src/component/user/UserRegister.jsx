@@ -6,12 +6,12 @@ import { auth,db } from "../../Firebase";
 import { doc , setDoc , Timestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-export default function Register(){
+export default function UserRegister(){
         const [fullname,setFullName]=useState("")
         const [email,setEmail]=useState("")
         const [password,setPassword]=useState("")
         const [contact,setContact]=useState("")
-        const [address,setAddress]=useState("")
+      
 
        const handleForm=(e)=>{
         e.preventDefault()
@@ -135,7 +135,7 @@ export default function Register(){
                     setContact(e.target.value)
                   }}
                 />
-                 <input
+                 {/* <input
                   type="text"
                   name="subject"
                   id="subject"
@@ -146,7 +146,7 @@ export default function Register(){
                   onChange={(e)=>{
                     setAddress(e.target.value)
                   }}
-                />
+                /> */}
                 
                 
                 <button type="submit" className="form-control">

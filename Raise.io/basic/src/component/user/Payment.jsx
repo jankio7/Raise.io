@@ -1,14 +1,26 @@
-import { collection, doc, onSnapshot, query, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, onSnapshot, query, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../Firebase"; // Ensure Firebase is initialized
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
 
-export default function Donate(){
-             const [name, setName]=useState("")
-             const [email, setEmail]=useState("")
+export default function Payment(){
+            const {campaignId, organiserId}=useParams()
+             const [name, setName]=useState(sessionStorage.getItem("name"))
+             const [email, setEmail]=useState(sessionStorage.getItem("email"))
+             const [campaignData, setCampaignData]=useState()
             const [amt,setAmt]=useState(0)
-             const handlePayment = () => {
+            useEffect(()=>{
+              fetchCampaignData()
+            },[])
+            let fetchCampaignData=async ()=>{
+              let campaignDoc=await getDoc(doc(db,"campaign",campaignId))
+              let campaignDatas=campaignDoc.data()
+              setCampaignData(campaignDatas)
+            }
+             const handlePayment = (e) => {
+              e.preventDefault()
                const options = {
                  key: "rzp_test_81R6461VPRt25N", // Razorpay Key ID
                  amount: amt*100, // Amount in paisa (₹500)
@@ -17,15 +29,21 @@ export default function Donate(){
                  description: "Product or Service",
                  handler: async function (response) {
                    // Save payment ID to Firebase Firestore
-                   const ref = doc(db, "payments", response.razorpay_payment_id);
+                   const ref = doc(db, "donations", response.razorpay_payment_id);
                    await setDoc(ref, {
                      paymentId: response.razorpay_payment_id,
                      status: "success",
                      amount:amt,
+                     campaignId,
+                     organiserId,
                      userId:sessionStorage.getItem("userId"),
                      timestamp: Date.now(),
                    });
-                   toast("Payment successful!");
+                   let data={
+                    moneyRaised:Number(campaignData.moneyRaised)+Number(amt)
+                   }
+                   await updateDoc(doc(db,"campaign",campaignId),data)
+                   toast("Donated successful!");
                  },
                  prefill: {
                    name: "Test User",

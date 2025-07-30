@@ -25,7 +25,8 @@ export default function AdminNavbar(){
               });
             }
           });
-            }
+        }
+      
 
     return(
         <>
@@ -72,6 +73,12 @@ export default function AdminNavbar(){
                <div className="container mx-auto">
                  <Link className="navbar-brand" to="index.html">
                    <span className="flaticon-pawprint-1 mr-2" />
+                   <img
+                        src="assets/images/logo.png"
+                        className="logo img-fluid"
+                        // alt="Kind Heart Charity"
+                      />
+
                    Raise.io
                  </Link>
                  <button
@@ -86,8 +93,40 @@ export default function AdminNavbar(){
                    <span className="fa fa-bars" /> Menu
                  </button>
                  <div className="collapse navbar-collapse " id="ftco-nav">
-                   <ul className="navbar-nav ml-auto justify-content:felx-end">
-                     <li className="nav-item active">
+                   <ul className="navbar-nav ms-auto">
+                      {/* <li className="nav-item">
+                       <Link to={"dashboard"} className="nav-link">
+                         DashBoard
+                       </Link>
+                     </li> */}
+               <li className="nav-item dropdown">
+                    <Link
+                      className="nav-link click-scroll dropdown-toggle"
+                      to="category"
+                      id="navbarLightDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      category
+                    </Link>
+                    <ul
+                      className="dropdown-menu dropdown-menu-light"
+                      aria-labelledby="navbarLightDropdownMenuLink"
+                    >
+                      <li>
+                        <Link className="dropdown-item" to="category">
+                          Category
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="managecategory">
+                          Manage Category
+                        </Link>
+                      </li>
+                      </ul>
+                  </li>
+                     {/* <li className="nav-item active">
                        <Link to="category" className="nav-link">
                          Category
                        </Link>
@@ -98,19 +137,20 @@ export default function AdminNavbar(){
                      </li>
                      <li className="nav-item">
                        <Link to={"managecategory"} className="nav-link">
+                         ManageCategory
+                       </Link>
+                     </li> */}
+                     <li className="nav-item">
+                       <Link to={"managecampaign"} className="nav-link">
                          Campaign
                        </Link>
-                     </li>
+                      </li>
                  
-                     <li className="nav-item">
-                       <a href="" className="nav-link">
-                         Reguests
-                       </a>
-                     </li>
+                     
                     
                      <li className="nav-item">
-                       <Link to={""} className="nav-link">
-                         Donation
+                       <Link to={"viewdonation"} className="nav-link">
+                          View Donation
                        </Link>
                       </li>
                                
@@ -119,7 +159,7 @@ export default function AdminNavbar(){
                        isLogin?
                        <li className="nav-item">
                        <Link to={"#"}  onClick={logout} className="nav-link">
-                         Logout{name}
+                         Logout
                        </Link>
                        </li>
                      :
