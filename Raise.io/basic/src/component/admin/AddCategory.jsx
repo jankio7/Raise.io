@@ -8,7 +8,7 @@ import { RingLoader } from "react-spinners"
 
    
 export default function AddCategory(){
-     const [load, setLoad]=useState(true)
+    //  const [load, setLoad]=useState(true)
     const [categoryname,setCategoryName]=useState("")
     const [poster,setPoster]=useState({})
     const [posterName, setPosterName]=useState("")
@@ -16,7 +16,7 @@ export default function AddCategory(){
       e.preventDefault()
           const formData = new FormData();
           formData.append("file",poster);
-          formData.append("upload_preset","images");9
+          formData.append("upload_preset","images");
             try {
             const response = await axios.post(
                   `https://api.cloudinary.com/v1_1/dsc2mxwti/image/upload`, 
@@ -27,8 +27,8 @@ export default function AddCategory(){
               toast.error("Error uploading image:", error.message);
             }
           }
-          setLoad(false)
-             
+          // setLoad(false)
+          
          
         const changeposter=(e)=>{
           setPosterName(e.target.value)
@@ -57,9 +57,9 @@ export default function AddCategory(){
     return(
         <>
           <div className="col-lg-5 col-12 mx-auto" >
-             {load?
+             {/* {load?
                     <RingLoader color="#00BD56" size={40} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
-                : 
+                :  */}
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -107,7 +107,7 @@ export default function AddCategory(){
                 </button>
                 
               </form>
-            }
+            
           </div>
           
     

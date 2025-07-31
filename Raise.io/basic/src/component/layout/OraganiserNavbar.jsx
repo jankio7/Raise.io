@@ -95,9 +95,15 @@ export default function OrganiserNavabr(){
                  </button>
                  <div className="collapse navbar-collapse " id="ftco-nav">
                    <ul className="navbar-nav ms-auto">
-                     <li className="nav-item active">
+                     {/* <li className="nav-item active">
                        <Link to="/organiser" className="nav-link">
                          Home
+                       </Link>
+                     </li> */}
+                     
+                     <li className="nav-item">
+                     <Link to={"dashboard12"} className="nav-link">
+                         DashBoard
                        </Link>
                      </li>
                        <li className="nav-item dropdown">

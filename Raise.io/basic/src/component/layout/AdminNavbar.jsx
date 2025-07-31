@@ -95,10 +95,15 @@ export default function AdminNavbar(){
                  <div className="collapse navbar-collapse " id="ftco-nav">
                    <ul className="navbar-nav ms-auto">
                       {/* <li className="nav-item">
-                       <Link to={"dashboard"} className="nav-link">
+                       <Link to="dashboard" className="nav-link">
                          DashBoard
                        </Link>
                      </li> */}
+                  <li className="nav-item">
+                     <Link to="open" className="nav-link">
+                         DashBoard
+                       </Link>
+                     </li>      
                <li className="nav-item dropdown">
                     <Link
                       className="nav-link click-scroll dropdown-toggle"

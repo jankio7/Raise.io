@@ -50,12 +50,13 @@ export default function Campaign1(){
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText:  `Yes, ${status?"block":"un-block"}`
+                    // confirmButtonText:  `Yes, ${status?"block":"un-block"}`
+                     confirmButtonText: "Yes, delete it!"
                     }).then(async (result) => {
                     if (result.isConfirmed) {
-                        let data={
-                    status:!status
-                }
+                //         let data={
+                //     status:!status
+                // }
                         await deleteDoc(doc(db,"camapign",CampaignId))
                         .then(()=>{
                             Swal.fire({
@@ -111,7 +112,7 @@ export default function Campaign1(){
                               <tr>
                                   <th scope="row">{index+1}</th>
                                    <td>{el.campaigntitle}</td>
-                                    <td><img className="img-fluid w-20 h-20 " src={el.image}/></td>
+                                    <td><img className="img-fluid  w-40 h-40" src={el.image}/></td>
                                     {/* <td>{el.type}</td> */}
                                   <td>{el.description}</td>
                                   <td>{el.goalAmount}</td>

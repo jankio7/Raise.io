@@ -3,8 +3,10 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { auth,db } from "../../Firebase";
 import { doc , setDoc , Timestamp } from "firebase/firestore";
+import { RingLoader } from "react-spinners";
 
 export default function Organization(){
+         const [load, setLoad]=useState(true)
         const [name,setName]=useState("")
         const [email,setEmail]=useState("")
         const [password,setPassword]=useState("")
@@ -23,6 +25,7 @@ export default function Organization(){
          .catch((error)=>{
           toast.error(error.message)
          })
+         setLoad(false)
        } 
         
        const saveData=async(userId)=>{
@@ -47,10 +50,11 @@ export default function Organization(){
           toast.error("err.message")
         }
        }
-        return(
-        <>
-        
-        <div className="col-lg-5 col-12 mx-auto" mr-5>
+   return(
+      <>
+          <section className="section-padding" id="section_3">
+        <div className="col-lg-5 col-12 mx-auto" >
+             
               <form
                 className="custom-form contact-form my-5 justify-content:center"
                 action="#"
@@ -164,12 +168,11 @@ export default function Organization(){
                   Submit 
                 </button>
                 
+              
               </form>
-            </div>
-          
-    
- 
-           
-        </>
-    )
+             
+        </div>
+      </section>  
+     </>
+  )
 }

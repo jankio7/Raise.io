@@ -129,6 +129,7 @@ export default function ManageCampaign(){
                                         </tbody>
                                     })
                                     }
+                                    
                                 
                             </table>
                         </div>

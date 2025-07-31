@@ -51,18 +51,19 @@ export default function Category(){
     }
 });
     }
-    return(
-        <>
+ return(
+    <>
+      <section className="section-padding" id="section_3">
         <div className="container">
             {load?
-                      <RingLoader color="#00BD56" size={30} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                      <RingLoader color="#00BD56" size={50} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
                       :
             <div className="row">
 
             
         {
         category.map((el)=>(
-          <div className="col-lg-4  my-4 col-md-6 col-12 mb-4 mb-lg-0">
+          <div className="col-lg-4  my-3 col-md-2 col-12 mb-4 mb-lg-0">
               <div className="custom-block-wrap ">
                 <img
                   src={el?.image}
@@ -114,6 +115,7 @@ export default function Category(){
             </div>
           }
         </div>
-        </>
-    )
+      </section>
+     </>
+  )
 }
