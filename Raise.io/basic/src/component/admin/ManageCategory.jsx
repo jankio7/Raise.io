@@ -95,7 +95,7 @@ export default function ManageCategory(){
                    <div className="d-flex justify-content-end p-2">
                         <Link to={"/admin/category"} className="btn btn-outline-dark">Add New +</Link>
                    </div>
-                <div className="contact-wrap w-100 p-md-2 p-2">
+                <div className="contact-wrap w-100 p-md-5 p-4">
                   <h3 className="mb-5">Manage Catgory</h3>
                   <table className="table table-border table-hover">
                          <thead>

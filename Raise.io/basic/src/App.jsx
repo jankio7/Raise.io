@@ -66,7 +66,7 @@ function App() {
               </Route>
 
               <Route path="/admin" element={<AdminLayout/>}>
-                <Route path="open" element={<DashBoard/>}/>
+                <Route index element={<DashBoard/>}/>
                 <Route path="category" element={<AddCategory/>}/>
                 <Route path="managecategory" element={<ManageCategory/>}/>
                 <Route path="category/update/:id" element={<UpdateCategory/>}/>
@@ -75,7 +75,7 @@ function App() {
               </Route>
  
               <Route path="/organiser" element={<OrganiserLayout/>} >
-                <Route path="dashboard12" element={<DashBoardorg/>}/>
+                <Route index element={<DashBoardorg/>}/>
                 <Route path="register" element={<OrganiserRegister/>}/>
                 <Route path="campaign" element={<AddCampaign/>}/>
                 {/* <Route path="campaign1" element={<Campaign/>}/> */}

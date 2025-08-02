@@ -100,7 +100,7 @@ export default function AdminNavbar(){
                        </Link>
                      </li> */}
                   <li className="nav-item">
-                     <Link to="open" className="nav-link">
+                     <Link to="" className="nav-link">
                          DashBoard
                        </Link>
                      </li>      

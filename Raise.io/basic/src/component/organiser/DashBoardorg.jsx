@@ -1,4 +1,4 @@
-import { collection, getCountFromServer } from "firebase/firestore";
+import { collection, getCountFromServer, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../Firebase";
@@ -18,9 +18,20 @@ export default function DashBoardorg(){
     let campaign=await getCountFromServer(collection(db,"campaign"))
     setCampaign(campaign.data().count);
    }
-   const fetchtotalamountCount=async ()=>{
-        let totalamountcount=await getCountFromServer(collection(db,"donations"))
-        setTotalAmount(totalamountcount.data().count);
+   const fetchtotalamountCount= ()=>{
+        let totalamount=0
+     onSnapshot(collection(db,"donations"),(doc)=>{
+      console.log(doc.docs);
+      doc.docs.map((el)=>{
+       totalamount= Number(el.data().amount)+totalamount
+       setTotalAmount(totalamount);
+      })
+      
+      
+     })
+        // setTotalAmount(totalamountcount.data().count);
+        // console.log(totalamountcount.docs);
+        
    }
     return(
         <>

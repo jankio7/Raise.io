@@ -102,7 +102,7 @@ export default function OrganiserNavabr(){
                      </li> */}
                      
                      <li className="nav-item">
-                     <Link to={"dashboard12"} className="nav-link">
+                     <Link to={""} className="nav-link">
                          DashBoard
                        </Link>
                      </li>
